@@ -1,0 +1,860 @@
+
+/* Callex Admin Page */
+
+.mainbkgimp{
+    background-color: #e1eaf7;
+    max-width: 1140px !important;
+}
+
+.bg-light {
+    --bs-bg-opacity: 0 !important;
+}
+
+p {
+    margin-bottom: 0px !important;
+}
+
+.mainnavimp {
+    background-color: #ffffff;
+    margin-bottom: 60px;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.10);
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+.mainnavcss {
+    background-color: white !important;
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+    color: #0e0e23;
+    font-size: 14px;
+    padding-left: 0px !important;
+    padding-right: 0px;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+.mainnavmainitem {
+    padding-left:10px !important;
+    padding-right:10px !important;
+    padding-top: 5px;
+}
+
+.dropdown-toggle::after {
+    display: none !important;
+}
+
+.dropdown-divider{
+    max-width: 600px !important;
+    margin-left: 20px !important;
+}
+
+@media screen and (max-width: 990px) {
+    .navmblscrnmrg{
+        padding-top:20px;
+        padding-top: 20px;
+    }
+}
+
+@media screen and (min-width: 990px) {
+    .dropdown-divider{
+        display: none !important;
+    }
+}
+
+.navitemhdr{
+    font-family: "Rubik", sans-serif;
+    font-weight: 600;
+    color: #6259ca;
+    font-size: 16px;
+    padding-left: 20px;
+}
+
+.navdrpdwncss3 {
+    font-size: 14px !important;
+    min-width: 600px !important;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.10) !important;
+    border: none !important;
+    padding-right: 20px !important;
+    padding-left: 20px !important;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+    border-radius: 0px !important;
+}
+
+@media screen and (max-width: 990px) {
+    .navdrpdwncss3{
+        min-width: 360px !important;
+    }
+}
+
+.navdrpdwncss2 {
+    font-size: 14px !important;
+    min-width: 800px !important;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.10) !important;
+    border: none !important;
+    padding-right: 20px !important;
+    padding-left: 20px !important;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+    border-radius: 0px !important;
+}
+
+@media screen and (max-width: 990px) {
+    .navdrpdwncss2{
+        min-width: 360px !important;
+    }
+}
+
+.navdrpdwncss1 {
+    font-size: 14px !important;
+    min-width: 300px !important;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.10) !important;
+    border: none !important;
+    padding-right: 20px !important;
+    padding-left: 20px !important;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+    border-radius: 0px !important;
+}
+
+@media screen and (max-width: 990px) {
+    .navdrpdwncss1{
+        min-width: 360px !important;
+    }
+}
+
+.admseconelft {
+    background-color: #6259ca;
+    padding: 30px;
+    display: flex;
+    background-image: url(../images/admin\ waves.svg);
+    background-size: cover;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.10);
+    height: 100%;
+}
+
+.admsectworgt {
+    background-color: white;
+}
+
+.seconerow {
+    margin-bottom: 60px;
+}
+
+.admseconelfttxt {
+    font-family: "Rubik", sans-serif;
+    color: white;
+    font-size: 13px;
+    padding-left: 30px;
+}
+
+.admseconelfthdr {
+    font-weight: 700;
+    font-size:20px;
+}
+
+.admseconergt {
+    padding: 30px;
+    background-image: url(../images/admin\ waves-2.svg);
+    background-size: cover;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.10);
+    background-color: white;
+    height: 100%;
+}
+
+.admsectworgtinnr {
+    background-color: #f7f6fb;
+    padding: 20px;
+}
+
+.admseconergthdr{
+    font-family: "Rubik", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    font-size:20px;
+    color: #0e0e23;
+}
+
+.admqcklnkbtn {
+    border: 1px solid #c2c2f2;
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    color: #0e0e23;
+    padding: 3px 15px 3px 15px;
+    border-radius: 20px;
+    background: white;
+    transition: 0.6s;
+    margin-bottom: 7px;
+}
+
+.admqcklnkbtn:hover{
+    background-color: #6259ca;
+    border: 1px solid #6259ca;
+    color: white;
+}
+
+.admsectwolft {
+    padding: 30px;
+    background-color: white;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.10);
+    height: 100%;
+}
+
+.sectwohdrlft {
+    font-family: "Rubik", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    font-size:20px;
+    color: #0e0e23;
+    margin-bottom: 20px;
+}
+
+.admprcsts1 {
+    padding: 20px 20px 20px 20px;
+    background-color: #f4783b;
+    text-align: center;
+}
+
+.admprcsts2 {
+    padding: 20px 20px 20px 20px;
+    background-color: #3cbb96;
+    text-align: center;
+}
+
+.admsectwoststxt {
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    color: white;
+    padding-top: 5px;
+}
+
+.admmrdtlbtn {
+    border: 1px solid #6259ca;
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    color: white;
+    padding: 3px 15px 3px 15px;
+    border-radius: 20px;
+    background: #6259ca;
+    transition: 0.6s;
+    margin-bottom: 7px;
+}
+
+.admmrdtlbtn:hover{
+    background-color: #6e3ead;
+    border: 1px solid #6e3ead;
+    color: white;
+}
+
+.admsectworgt {
+    padding: 30px;
+    background-color: white;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.10);
+    height: 100%;
+}
+
+.admaccordion {
+    border: 1px solid #c2c2f2 !important;
+    font-family: "Rubik", sans-serif;
+    font-size: 13px;
+    color: #6259ca;
+}
+
+.admaccohdr {
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+    color: #6259ca !important;
+    font-size: 15px !important;
+}
+
+.admaccbdy {
+    background-color: #f7f6fb;
+    font-size: 13px;
+}
+
+.admaccordion:focus {
+    outline: 0 !important;
+    box-shadow: none !important;
+}
+
+.accordion {
+	--bs-accordion-color: var(--bs-body-color);
+	--bs-accordion-bg: var(--bs-body-bg);
+	--bs-accordion-transition: color 0.15s ease-in-out,background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out,border-radius 0.15s ease;
+	--bs-accordion-border-color: var(--bs-border-color);
+	--bs-accordion-border-width: var(--bs-border-width);
+	--bs-accordion-border-radius: var(--bs-border-radius);
+	--bs-accordion-inner-border-radius: calc(var(--bs-border-radius) - (var(--bs-border-width)));
+	--bs-accordion-btn-padding-x: 1.25rem;
+	--bs-accordion-btn-padding-y: 1rem;
+	--bs-accordion-btn-color: var(--bs-body-color);
+	--bs-accordion-btn-bg: var(--bs-accordion-bg);
+	--bs-accordion-btn-icon: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 28.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 10 10' style='enable-background:new 0 0 10 10;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:%23625EAA;%7D%0A%3C/style%3E%3Cpolygon class='st0' points='8.3,1.6 5,4.9 1.7,1.6 0,3.4 5,8.4 6.8,6.6 10,3.4 '/%3E%3C/svg%3E") !important;
+	--bs-accordion-btn-icon-width: 10px !important;
+	--bs-accordion-btn-icon-transform: rotate(-180deg);
+	--bs-accordion-btn-icon-transition: transform 0.2s ease-in-out;
+	--bs-accordion-btn-active-icon: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 28.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 10 10' style='enable-background:new 0 0 10 10;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:%23625EAA;%7D%0A%3C/style%3E%3Cpolygon class='st0' points='8.3,1.6 5,4.9 1.7,1.6 0,3.4 5,8.4 6.8,6.6 10,3.4 '/%3E%3C/svg%3E") !important;
+	--bs-accordion-btn-focus-border-color: none !important;
+	--bs-accordion-btn-focus-box-shadow: none !important;
+	--bs-accordion-body-padding-x: 1.25rem;
+	--bs-accordion-body-padding-y: 1rem;
+	--bs-accordion-active-color: var(--bs-primary-text-emphasis);
+	--bs-accordion-active-bg: white !important;
+}
+
+.admaccoinnrbtn {
+    text-decoration: none;
+    color: #0e0e23;
+}
+
+.mainfootimp {
+    background-color: #6259ca;
+    min-height: 32px;
+    margin-top: 60px;
+    text-align: center;
+    padding-top: 8px;
+}
+
+.foottxt {
+    font-family: "Rubik", sans-serif;
+    font-size: 12px;
+    color: white;
+}
+
+.accomainsec {
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.10);
+    background-color: white;
+    padding: 30px;
+}
+
+
+/* Callex Web Panel Page */
+
+.cwpsecone {
+    padding-top: 20px;
+    padding-bottom: 12px;
+    background-color: white;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.10);
+    text-align: center;
+    height: 100%;
+}
+
+.cwpseconebtn {
+    border: 1px solid #6259ca;
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: white;
+    padding: 3px 15px 3px 15px;
+    border-radius: 20px;
+    background: #6259ca;
+    transition: 0.6s;
+    margin-bottom: 7px;
+    min-width: 154px;
+}
+
+.cwpseconebtn:hover{
+    background-color: #f4783b;
+    border: 1px solid #f4783b;
+    color: white;
+}
+
+.cwpsectwo {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    background-color: white;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.10);
+    height: 100%;
+}
+
+.g-4 { 
+    --bs-gutter-x: 40px !important; 
+    --bs-gutter-y: 40px !important; 
+}
+
+.g-3 { 
+    --bs-gutter-x: 20px !important; 
+    --bs-gutter-y: 20px !important; 
+}
+
+.cwpsectwoonehdr {
+    font-family: "Rubik", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #6259ca;
+    margin-bottom: 20px;
+}
+
+.cwpshutbtn {
+    border: none;
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    color: white;
+    padding: 6px 15px 6px 15px;
+    border-radius: 20px;
+    background: #ec1c24;
+    transition: 0.6s;
+    width: 100%;
+}
+
+.cwpshutbtn:hover{
+    background-color: #c81c24;
+    color: white;
+}
+
+.cwprestbtn {
+    border: none;
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    color: white;
+    padding: 6px 15px 6px 15px;
+    border-radius: 20px;
+    background: #3cbb96;
+    transition: 0.6s;
+    width: 100%;
+}
+
+.cwprestbtn:hover{
+    background-color: #3ca396;
+    color: white;
+}
+
+.cwpsectwoonestsdiv {
+    background-color: #f7f6fb;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.cwpsectwotwostsdiv {
+    background-color: #f7f6fb;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.cwpsectwoonestspara {
+    font-family: "Rubik", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #0e0e23;
+}
+
+.cwpsectwotwostspara {
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    color: #0e0e23;
+}
+
+.cwpsectwothrstspara {
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    color: #0e0e23;
+}
+
+.cwpsipusrhdr {
+    font-family: "Rubik", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #6259ca;
+    margin-bottom: 20px;
+}
+
+/* Callex Dashboard Page */
+
+.cdshsecs {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+    background-color: white;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.10);
+}
+
+.cdshsecone {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    background-color: white;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.10);
+    height: 100%;
+}
+
+.cdshseconedrpdwn {
+    margin-top: 5px !important;
+    min-width: 204px !important;
+    font-family: "Rubik", sans-serif;
+    font-size: 14px !important;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.10) !important;
+    border: none !important;
+    border-radius: 0px !important;
+}
+
+.cdshdrpdwnbtn {
+    font-family: "Rubik", sans-serif !important;
+    background: none !important;
+    color: black !important;
+    border: 1px solid #c2c2f2 !important;
+    border-radius: 0px !important;
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+    padding-top: 7px !important;
+    padding-bottom: 7px !important;
+}
+
+.inptlbl {
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #0e0e23;
+}
+
+.cdshdrpdwn {
+    text-align: center;
+}
+
+.cdshsectwolft {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    background-color: #6259ca;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.10);
+    height: 100%;
+    text-align: center;
+}
+
+.cdshclsinquebtn {
+    background-color: #6259ca;
+    border: none;
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    color: white;
+    height: 100%;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    transition: 0.8s;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.10);
+}
+
+.cdshclsinquebtn:hover {
+    background-color: #6e3ead;
+}
+
+.cdshsectwolfthdr {
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    color: white;
+    padding-top: 10px;
+}
+
+.cdshsectworgthdr {
+    font-family: "Rubik", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #0e0e23;
+}
+
+.cdshsecthreergthdr {
+    font-family: "Rubik", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #0e0e23;
+    margin-bottom: 20px;
+}
+
+.cdshsecfourlfthdr {
+    font-family: "Rubik", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #0e0e23;
+    margin-bottom: 20px;
+}
+
+.cdshsecfourrgthdr {
+    font-family: "Rubik", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #0e0e23;
+    margin-bottom: 20px;
+}
+
+.cdshsectworgtlegend{
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #0e0e23;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    min-width: 176px;
+}
+
+@media screen and (max-width: 767px) {
+    .cdshsectworgtlegend{
+        align-items: flex-start;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .cdshsectworgtlegend{
+        padding-top: 10px;
+    }
+}
+
+progress {
+    border: none;
+    width: 100%;
+    height: 20px;
+    background: #f4783b;
+}
+  
+progress {
+    color: lightblue;
+}
+  
+progress::-moz-progress-bar {
+    background: #3cbb96;
+}
+  
+progress::-webkit-progress-value {
+    background: #3cbb96;
+}
+  
+progress::-webkit-progress-bar {
+    background: #f4783b;
+}
+
+/* Old Progress bar code
+
+.cdshtobedialedprogressbar {
+    vertical-align: baseline;
+    height: 20px !important;
+    border: none;
+    width: 100%;
+    background-color: #f4783b;
+}
+
+.cdshtobedialedprogressbar::-webkit-progress-value {
+    background-color: #3cbb96 !important;
+}
+
+.cdshtobedialedprogressbar::-moz-progress-value {
+    background-color: #3cbb96 !important;
+}
+
+*/
+
+/* Table Blue Dashboard*/
+
+.cdshtblblue {
+    --bs-table-bg: #6259ca !important;
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.cdshtblbluebody {
+    --bs-table-bg: #f7f6fb !important;
+    border-color: #c2c2f2 !important;
+    font-family: "Rubik", sans-serif;
+    font-size: 13px;
+    color: #0e0e23;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+/* Table Blue Dashboard End */
+
+.cdshsectworgt {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+    background-color: white;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.10);
+    height: 100%;
+}
+
+.cdshsecthreelfthdr {
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: #0e0e23;
+}
+
+.cdshsecthreelft {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+    background-color: white;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.10);
+    height: 100%;
+}
+
+.cdshtblhdr {
+    background-color: #6259ca !important;
+    font-family: "Rubik", sans-serif;
+    font-size: 14px;
+}
+
+.cdshsecthreergthdrtxt {
+    font-family: "Rubik", sans-serif;
+    font-size: 14px;
+    color: white;
+    padding-top: 8px;
+}
+
+
+/* Callex Process Status Page */
+
+.cpssecs {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+    background-color: white;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.10);
+    height: 100%;
+}
+
+.cpseconelftinnr {
+    font-family: "Rubik", sans-serif;
+    font-size: 13px;
+    color: #0e0e23;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.cpseconergtbtn1 {
+    border: 1px solid #3cbb96;
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    color: #3cbb96;
+    padding: 3px 15px 3px 15px;
+    border-radius: 20px;
+    background: none;
+    transition: 0.6s;
+    width: 100%;
+}
+
+.cpseconergtbtn1:hover{
+    background-color: #3cbb96;
+    border: 1px solid #3cbb96;
+    color: white;
+}
+
+.cpseconergtbtn2 {
+    border: 1px solid #f4783b;
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    color: #f4783b;
+    padding: 3px 15px 3px 15px;
+    border-radius: 20px;
+    background: none;
+    transition: 0.6s;
+    width: 100%;
+}
+
+.cpseconergtbtn2:hover{
+    background-color: #f4783b;
+    border: 1px solid #f4783b;
+    color: white;
+}
+
+.cpseconergtbtn3 {
+    border: 1px solid #f4783b;
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    color: #f4783b;
+    padding: 3px 15px 3px 15px;
+    border-radius: 20px;
+    background: none;
+    transition: 0.6s;
+    width: 100%;
+}
+
+.cpseconergtbtn3:hover{
+    background-color: #f4783b;
+    border: 1px solid #f4783b;
+    color: white;
+}
+
+.cpseconergtbtn4 {
+    border: none;
+    background-color: #6259ca;
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: white;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: 0.8s;
+}
+
+.cpseconergtbtn4:hover {
+    background-color: #6e3ead;
+}
+
+.cdshtblblackbody {
+    --bs-table-bg: #f7f6fb !important;
+    border-color: #c2c2f2 !important;
+    font-family: "Rubik", sans-serif;
+    font-size: 13px;
+    color: #0e0e23;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+.cdshtblblack {
+    --bs-table-bg: #0e0e23 !important;
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+}
+
+.cpactbtns {
+    width: 15px;
+    cursor: pointer;
+}
+
+.cptxtbartxt {
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+}
+
+select {
+    word-wrap: normal;
+    background: none;
+    border: 1px solid #6259ca;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 30px;
+    font-family: "Rubik", sans-serif !important;
+    font-size: 14px !important;
+}

@@ -21,6 +21,6 @@ const AuthorizationSchema = new mongoose.Schema(
 );
 
 AuthorizationSchema.index({ unique: true });
-const Authorization = mongoose.model("Authorization", AuthorizationSchema);
+const Authorization = mongoose.model("authorizations", AuthorizationSchema);
 
 module.exports = Authorization;

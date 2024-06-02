@@ -80,7 +80,7 @@ const loginUsers = async (req, res) => {
 
 const dashboard = (req, res) => {
   try {
-    return res.render("Admin");
+    return res.render("dashboard/Admin");
   } catch (error) {
     logger.error("Error in auth.login => " + error.message);
     logger.error(JSON.stringify(error));

@@ -9,9 +9,9 @@ const { verifyToken } = require("../middleware/auth.middleware");
 
 const authRoutes = express.Router();
 
-authRoutes.post("/register", verifyToken, register);
+authRoutes.post("/register", register);
 authRoutes.get("/login", login);
-authRoutes.post("/login", loginUsers);
+authRoutes.post("/login/", loginUsers);
 authRoutes.get("/dashboard", verifyToken, dashboard);
 
 module.exports = authRoutes;

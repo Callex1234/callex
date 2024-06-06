@@ -6,16 +6,19 @@ const createError = require("http-errors");
 const routes = require("./routes");
 const path = require("path");
 const { logger } = require("./config/logger.config");
+const cookieParser = require("cookie-parser"); // Add this line.
+
 require("./config/mongodb.config");
-app.use(cors());
 app.use(express.json());
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser()); // Add this line
 app.use(routes);
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
 app.use(express.static(path.join(__dirname, "public")));
-
+// middleware
 app.use((req, res, next) => {
   next(createError(404));
 });

@@ -10,4 +10,5 @@ module.exports = {
   BASE_URL: process.env.BASE_URL,
   DATABASE_URL: process.env.DATABASE_URL,
   PORT: process.env.PORT,
+  SECRET_KEY: process.env.SECRET_KEY,
 };

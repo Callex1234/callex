@@ -1,0 +1,414 @@
+
+/* Entry Page CSS */
+
+html{
+    background-image: url(../images/login-background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'PT Sans', sans-serif;
+    height: 100%;
+}
+
+body{
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.login-container{
+    background-color: #ffffff;
+    border-radius: 5px;
+    width: 400px;
+}
+
+.login-icon{
+    border: 1px solid #d1d3d4;
+    border-radius: 65px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.login-icon:hover{
+    border: 1px solid #262261;
+}
+
+p.login-text{
+    margin: 0px;
+}
+
+.login-icon-container{
+    display: inline-block;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 25px;
+}
+
+.login-text{
+    padding: 0px;
+}
+
+.login-selection-container{
+    padding-bottom: 45px;
+    padding-right: 45px;
+    padding-left: 45px;
+    padding-top: 0px;
+    margin: 0px;
+}
+
+.login-title{
+    display:inline-block;
+    width: 103px;
+    font-size: 9px;
+}
+
+.login-hr{
+    width: 90%;
+    border: 1px solid #f2f2f2;
+}
+
+.login-text-container{
+    padding-left: 40px;
+    padding-right: 40px;
+    text-align: center;
+    width: 320px;
+}
+
+.login-image-container{
+    padding: 45px 45px 20px 45px;
+}
+
+.login-logo{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+/* Admin Login Area Css*/
+
+.admin-login-input-container{
+    padding-bottom: 45px;
+    padding-left: 45px;
+    padding-right: 45px;
+}
+
+.admin-username{
+    width: 310px;
+    display: inline;
+    margin-top: 40px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid #d1d3d4;
+    text-align: center;
+    font-size: 14px;
+}
+
+.admin-username:focus{
+    border-bottom: 1px solid #262261;
+}
+
+.admin-username:focus::placeholder{
+    opacity: 0;
+}
+
+.admin-password{
+    width: 310px;
+    display: inline;
+    margin-top: 30px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid #d1d3d4;
+    text-align: center;
+    font-size: 14px;
+}
+
+.admin-password:focus{
+    border-bottom: 1px solid #262261;
+}
+
+.admin-password:focus::placeholder{
+    opacity: 0;
+}
+
+.admin-login-icon{
+    border: 1px solid #d1d3d4;
+    border-radius: 65px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.admin-login-button{
+    width: 200px;
+    height: 50px;
+    margin-top: 40px;
+    background-color: #262261;
+    border: none;
+    border-radius: 25px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    transition: 0.4s;
+    cursor: pointer;
+    display: inline;
+}
+
+.admin-login-button:hover{
+    background-color: #413ba6;
+}
+
+/* Agent Login Area Css*/
+
+.agent-login-input-container{
+    padding-bottom: 45px;
+    padding-left: 45px;
+    padding-right: 45px;
+}
+
+.agent-username{
+    width: 310px;
+    display: inline;
+    margin-top: 40px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid #d1d3d4;
+    text-align: center;
+    font-size: 14px;
+}
+
+.agent-username:focus{
+    border-bottom: 1px solid #262261;
+}
+
+.agent-username:focus::placeholder{
+    opacity: 0;
+}
+
+.agent-password{
+    width: 310px;
+    display: inline;
+    margin-top: 30px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid #d1d3d4;
+    text-align: center;
+    font-size: 14px;
+}
+
+.agent-password:focus{
+    border-bottom: 1px solid #262261;
+}
+
+.agent-password:focus::placeholder{
+    opacity: 0;
+}
+
+.agent-login-icon{
+    border: 1px solid #d1d3d4;
+    border-radius: 65px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.agent-login-button{
+    width: 200px;
+    height: 50px;
+    margin-top: 40px;
+    background-color: #262261;
+    border: none;
+    border-radius: 25px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    transition: 0.4s;
+    cursor: pointer;
+    display: inline;
+}
+
+.agent-login-button:hover{
+    background-color: #413ba6;
+}
+
+/* Supervisor Login Area Css*/
+
+.sup-login-input-container{
+    padding-bottom: 45px;
+    padding-left: 45px;
+    padding-right: 45px;
+}
+
+.sup-username{
+    width: 310px;
+    display: inline;
+    margin-top: 40px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid #d1d3d4;
+    text-align: center;
+    font-size: 14px;
+}
+
+.sup-username:focus{
+    border-bottom: 1px solid #262261;
+}
+
+.sup-username:focus::placeholder{
+    opacity: 0;
+}
+
+.sup-password{
+    width: 310px;
+    display: inline;
+    margin-top: 30px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid #d1d3d4;
+    text-align: center;
+    font-size: 14px;
+}
+
+.sup-password:focus{
+    border-bottom: 1px solid #262261;
+}
+
+.sup-password:focus::placeholder{
+    opacity: 0;
+}
+
+.sup-login-icon{
+    border: 1px solid #d1d3d4;
+    border-radius: 65px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.sup-login-button{
+    width: 200px;
+    height: 50px;
+    margin-top: 40px;
+    background-color: #262261;
+    border: none;
+    border-radius: 25px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    transition: 0.4s;
+    cursor: pointer;
+    display: inline;
+}
+
+.sup-login-button:hover{
+    background-color: #413ba6;
+}
+
+/* MIS Login Area Css*/
+
+.mis-login-input-container{
+    padding-bottom: 45px;
+    padding-left: 45px;
+    padding-right: 45px;
+}
+
+.mis-username{
+    width: 310px;
+    display: inline;
+    margin-top: 40px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid #d1d3d4;
+    text-align: center;
+    font-size: 14px;
+}
+
+.mis-username:focus{
+    border-bottom: 1px solid #262261;
+}
+
+.mis-username:focus::placeholder{
+    opacity: 0;
+}
+
+.mis-password{
+    width: 310px;
+    display: inline;
+    margin-top: 30px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid #d1d3d4;
+    text-align: center;
+    font-size: 14px;
+}
+
+.mis-password:focus{
+    border-bottom: 1px solid #262261;
+}
+
+.mis-password:focus::placeholder{
+    opacity: 0;
+}
+
+.mis-login-icon{
+    border: 1px solid #d1d3d4;
+    border-radius: 65px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.mis-login-button{
+    width: 200px;
+    height: 50px;
+    margin-top: 40px;
+    background-color: #262261;
+    border: none;
+    border-radius: 25px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    transition: 0.4s;
+    cursor: pointer;
+    display: inline;
+}
+
+.mis-login-button:hover{
+    background-color: #413ba6;
+}
+
+/* Back Button */
+
+.back-button{
+    width: 50px;
+    height: 50px;
+    margin-top: 40px;
+    margin-left: 20px;
+    background-color: #ee4036;
+    border: none;
+    border-radius: 25px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    transition: 0.4s;
+    cursor: pointer;
+    display: inline;
+}
+
+.back-button:hover{
+    background-color: #bc322a;
+}
+
+/* Login Area Margins */
+
+.inner-login-icon{
+    padding-top: 30px;
+}

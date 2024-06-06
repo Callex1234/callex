@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "export NODE_ENV=development && nodemon src/index.js",
+    "dev:windows": "dotenv -e .env.development nodemon src/index.js",
     "prod": "export NODE_ENV=production && node src/index.js"
   },
   "keywords": [],

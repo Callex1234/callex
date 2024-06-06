@@ -51,19 +51,19 @@ const crm = async (req, res) => {
     //   });
     // }
 
-    const datadtadtadt = await CrmAnswer.find()
-      .populate([
-        {
-          path: "crmfield",
-          strictPopulate: false,
-        },
-        {
-          path: "crm",
-          strictPopulate: false,
-        },
-      ])
-      .exec();
-    console.log(datadtadtadt);
+    // const datadtadtadt = await CrmAnswer.find()
+    //   .populate([
+    //     {
+    //       path: "crmfield",
+    //       strictPopulate: false,
+    //     },
+    //     {
+    //       path: "crm",
+    //       strictPopulate: false,
+    //     },
+    //   ])
+    //   .exec();
+    // console.log(datadtadtadt);
     return res.render("admin/crm");
   } catch (error) {
     logger.error("Error in crm.crm => " + error.message);
@@ -72,4 +72,9 @@ const crm = async (req, res) => {
   }
 };
 
-module.exports = { crm };
+const addCrm = async (req, res) => {
+  console.log(req.body);
+  return res.send("akjshdghavjsk");
+};
+
+module.exports = { crm, addCrm };

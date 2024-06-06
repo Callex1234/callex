@@ -20,7 +20,14 @@
     <script src="/script/main.js"></script>
     <!-- New Tags End -->
     <title>Callex - CRM</title>
+    <style>
+      .field-container {
+          margin-bottom: 10px;
+      }
+  </style>
+
 </head>
+
 <body style="background-color: #e1eaf7;">
     <div class="container-md mainbkgimp">
             
@@ -172,7 +179,7 @@
             <div class="row g-4 d-flex justify-content-center" style="margin-bottom: 40px;">
                 <div class="col-md-12">
                     <div class="cserveredtsec">
-                      <button class="cpserveraddbtn" data-bs-toggle="modal" data-bs-target="#addroutemodal1">+ Add CRM</button>&nbsp;&nbsp;&nbsp;
+                      <button class="cpserveraddbtn" data-bs-toggle="modal" data-bs-target="#addroutemodal">+ Add CRM</button>&nbsp;&nbsp;&nbsp;
 
                       <!-- Add CRM Pop-up -->
                       <div class="modal fade" id="addservermodal" tabindex="-1" aria-labelledby="addservermodalLabel" aria-hidden="true">
@@ -662,6 +669,7 @@
                     <!-- Add CRM Pop-Up End -->
 
                     <!-- Edit CRM Pop-Up -->
+                    <form method="POST" action="/admin/crm">
                     <div class="modal fade" id="addroutemodal" tabindex="-1" aria-labelledby="addroutemodalLabel" aria-hidden="true">
                       <div class="modal-dialog modal-xl modal-dialog-scrollable">
                         <div class="modal-content rounded-0">
@@ -677,277 +685,26 @@
                               <!-- Row 1 -->
                               <div class="row g-3" style="margin-bottom: 20px;">
                                 <div class="col-lg-3">
-                                  <input type="text" class="cprcsrchinpt" placeholder="CRM Name" style="width: 100%;">
+                                  <input type="text" class="cprcsrchinpt" name="crm" placeholder="CRM Name" style="width: 100%;">
+                                </div>                               
+                                <div class="col-lg-3">
+                                  <input type="text" class="cprcsrchinpt" placeholder="Message" style="width: 100%;">
                                 </div>
+                                <div class="col-lg-3">
+                                  <input type="file" class="cprcsrchinpt" placeholder="" style="width: 100%;">
+                                </div>                                
                               </div>
                               <!--Row 1 End -->
-
-                              <!-- Row 2 -->
-                              <div class="row g-3" style="margin-bottom: 20px;padding-left: 10px;padding-right: 10px;">
-                                <div class="col-lg-12" style="background-color:#f7f6fb;padding: 10px;">
-                                  <div class="row g-3">
-                                    <div class="col-lg-12" style="margin-bottom: 10px;">
-                                      <h3 class="inbtrnksubsecdivhdr">General Information</h3>
-                                    </div>
-                                    <div class="col-lg-4">
-                                      <div style="display: flex;">
-                                        <div class="cl-toggle-switch" style="margin-top: 2px;">
-                                          <label class="cl-switch">
-                                            <input type="checkbox">
-                                            <span></span>
-                                          </label>
-                                        </div>&nbsp;&nbsp;
-                                        <input type="text" class="adlrinput" placeholder="Primary Number" style="width: 100%;">
-                                      </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                      <div style="display: flex;">
-                                        <div class="cl-toggle-switch" style="margin-top: 2px;">
-                                          <label class="cl-switch">
-                                            <input type="checkbox">
-                                            <span></span>
-                                          </label>
-                                        </div>&nbsp;&nbsp;
-                                        <input type="text" class="adlrinput" placeholder="Comments" style="width: 100%;">
-                                      </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                      <div style="display: flex;">
-                                        <div class="cl-toggle-switch" style="margin-top: 2px;">
-                                          <label class="cl-switch">
-                                            <input type="checkbox">
-                                            <span></span>
-                                          </label>
-                                        </div>&nbsp;&nbsp;
-                                        <input type="text" class="adlrinput" placeholder="Title" style="width: 100%;">
-                                      </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                      <div style="display: flex;">
-                                        <div class="cl-toggle-switch" style="margin-top: 2px;">
-                                          <label class="cl-switch">
-                                            <input type="checkbox">
-                                            <span></span>
-                                          </label>
-                                        </div>&nbsp;&nbsp;
-                                        <input type="text" class="adlrinput" placeholder="First Name" style="width: 100%;">
-                                      </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                      <div style="display: flex;">
-                                        <div class="cl-toggle-switch" style="margin-top: 2px;">
-                                          <label class="cl-switch">
-                                            <input type="checkbox">
-                                            <span></span>
-                                          </label>
-                                        </div>&nbsp;&nbsp;
-                                        <input type="text" class="adlrinput" placeholder="Middle Name" style="width: 100%;">
-                                      </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                      <div style="display: flex;">
-                                        <div class="cl-toggle-switch" style="margin-top: 2px;">
-                                          <label class="cl-switch">
-                                            <input type="checkbox">
-                                            <span></span>
-                                          </label>
-                                        </div>&nbsp;&nbsp;
-                                        <input type="text" class="adlrinput" placeholder="Last Name" style="width: 100%;">
-                                      </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                      <div style="display: flex;">
-                                        <div class="cl-toggle-switch" style="margin-top: 2px;">
-                                          <label class="cl-switch">
-                                            <input type="checkbox">
-                                            <span></span>
-                                          </label>
-                                        </div>&nbsp;&nbsp;
-                                        <input type="text" class="adlrinput" placeholder="Date of Birth (DD-MM-YY)" style="width: 100%;">
-                                      </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                      <div style="display: flex;">
-                                        <div class="cl-toggle-switch" style="margin-top: 2px;">
-                                          <label class="cl-switch">
-                                            <input type="checkbox">
-                                            <span></span>
-                                          </label>
-                                        </div>&nbsp;&nbsp;
-                                        <select class="form-select nwslctmenu" aria-label="Default select example">
-                                          <option selected>Gender</option>
-                                          <option value="1">Male</option>
-                                          <option value="2">Female</option>
-                                        </select>
-                                      </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                      <div style="display: flex;">
-                                        <div class="cl-toggle-switch" style="margin-top: 2px;">
-                                          <label class="cl-switch">
-                                            <input type="checkbox">
-                                            <span></span>
-                                          </label>
-                                        </div>&nbsp;&nbsp;
-                                        <input type="text" class="adlrinput" placeholder="Designation" style="width: 100%;">
-                                      </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                      <div style="display: flex;">
-                                        <div class="cl-toggle-switch" style="margin-top: 2px;">
-                                          <label class="cl-switch">
-                                            <input type="checkbox">
-                                            <span></span>
-                                          </label>
-                                        </div>&nbsp;&nbsp;
-                                        <input type="email" class="adlrinput" placeholder="Email ID" style="width: 100%;">
-                                      </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                      <div style="display: flex;">
-                                        <div class="cl-toggle-switch" style="margin-top: 2px;">
-                                          <label class="cl-switch">
-                                            <input type="checkbox">
-                                            <span></span>
-                                          </label>
-                                        </div>&nbsp;&nbsp;
-                                        <input type="text" class="adlrinput" placeholder="Phone 1" style="width: 100%;">
-                                      </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                      <div style="display: flex;">
-                                        <div class="cl-toggle-switch" style="margin-top: 2px;">
-                                          <label class="cl-switch">
-                                            <input type="checkbox">
-                                            <span></span>
-                                          </label>
-                                        </div>&nbsp;&nbsp;
-                                        <input type="text" class="adlrinput" placeholder="Phone 2" style="width: 100%;">
-                                      </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                      <div style="display: flex;">
-                                        <div class="cl-toggle-switch" style="margin-top: 2px;">
-                                          <label class="cl-switch">
-                                            <input type="checkbox">
-                                            <span></span>
-                                          </label>
-                                        </div>&nbsp;&nbsp;
-                                        <input type="text" class="adlrinput" placeholder="Phone 3" style="width: 100%;">
-                                      </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                      <div style="display: flex;">
-                                        <div class="cl-toggle-switch" style="margin-top: 2px;">
-                                          <label class="cl-switch">
-                                            <input type="checkbox">
-                                            <span></span>
-                                          </label>
-                                        </div>&nbsp;&nbsp;
-                                        <input type="text" class="adlrinput" placeholder="Phone 4" style="width: 100%;">
-                                      </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                      <div style="display: flex;">
-                                        <div class="cl-toggle-switch" style="margin-top: 2px;">
-                                          <label class="cl-switch">
-                                            <input type="checkbox">
-                                            <span></span>
-                                          </label>
-                                        </div>&nbsp;&nbsp;
-                                        <input type="text" class="adlrinput" placeholder="Phone 5" style="width: 100%;">
-                                      </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                      <div style="display: flex;">
-                                        <div class="cl-toggle-switch" style="margin-top: 2px;">
-                                          <label class="cl-switch">
-                                            <input type="checkbox">
-                                            <span></span>
-                                          </label>
-                                        </div>&nbsp;&nbsp;
-                                        <input type="text" class="adlrinput" placeholder="Address1" style="width: 100%;">
-                                      </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                      <div style="display: flex;">
-                                        <div class="cl-toggle-switch" style="margin-top: 2px;">
-                                          <label class="cl-switch">
-                                            <input type="checkbox">
-                                            <span></span>
-                                          </label>
-                                        </div>&nbsp;&nbsp;
-                                        <input type="text" class="adlrinput" placeholder="Address 2" style="width: 100%;">
-                                      </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                      <div style="display: flex;">
-                                        <div class="cl-toggle-switch" style="margin-top: 2px;">
-                                          <label class="cl-switch">
-                                            <input type="checkbox">
-                                            <span></span>
-                                          </label>
-                                        </div>&nbsp;&nbsp;
-                                        <input type="text" class="adlrinput" placeholder="Address 3" style="width: 100%;">
-                                      </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                      <div style="display: flex;">
-                                        <div class="cl-toggle-switch" style="margin-top: 2px;">
-                                          <label class="cl-switch">
-                                            <input type="checkbox">
-                                            <span></span>
-                                          </label>
-                                        </div>&nbsp;&nbsp;
-                                        <input type="text" class="adlrinput" placeholder="Landmark" style="width: 100%;">
-                                      </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                      <div style="display: flex;">
-                                        <div class="cl-toggle-switch" style="margin-top: 2px;">
-                                          <label class="cl-switch">
-                                            <input type="checkbox">
-                                            <span></span>
-                                          </label>
-                                        </div>&nbsp;&nbsp;
-                                        <input type="text" class="adlrinput" placeholder="City" style="width: 100%;">
-                                      </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                      <div style="display: flex;">
-                                        <div class="cl-toggle-switch" style="margin-top: 2px;">
-                                          <label class="cl-switch">
-                                            <input type="checkbox">
-                                            <span></span>
-                                          </label>
-                                        </div>&nbsp;&nbsp;
-                                        <input type="text" class="adlrinput" placeholder="State" style="width: 100%;">
-                                      </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                      <div style="display: flex;">
-                                        <div class="cl-toggle-switch" style="margin-top: 2px;">
-                                          <label class="cl-switch">
-                                            <input type="checkbox">
-                                            <span></span>
-                                          </label>
-                                        </div>&nbsp;&nbsp;
-                                        <input type="text" class="adlrinput" placeholder="Pincode" style="width: 100%;">
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <!--Row 2 End -->
 
                               <!-- Row 3 -->
                               <div class="row g-3" style="margin-bottom: 20px;padding-left: 10px;padding-right: 10px;">
                                 <div class="col-lg-12" id="crmaddfieldaftsec" style="background-color:#f7f6fb;padding: 10px;">
                                   
-                                  <div class="row g-3">
+                                  <div class="row g-3" >
                                     <div class="col-lg-12" style="margin-bottom: 10px;">
                                       <h3 class="inbtrnksubsecdivhdr">CRM Fields</h3>
                                     </div>
+                                    <div class="row g-3"                                                                                                                                                           id="demotxt">
                                     <div class="col-lg-1">
                                       <div class="" style="display: flex;">
                                         <P class="cprcsactvpara" style="margin-top: 3px;">Edit?:</P>
@@ -972,24 +729,19 @@
                                     </div>
                                     <div class="col-lg">
                                       <input type="text" class="adlrinput" placeholder="Add Options" style="width: 100%;">
-                                    </div>
-                                    <!--
-                                    <div class="col-lg">
-                                      <button class="crmaddbtn">+</button>&nbsp;&nbsp;&nbsp;<button class="crmdelbtn">-</button>
-                                    </div>
-                                    -->
-                                  </div>
+                                    </div>                                  
+                                  </div>                     
 
                                   <div class="row">
                                     <div class="col-lg" style="margin-top: 0px;">
-                                      <button class="inbtrnkaddbtn" id="crmaddfieldsecbtn">+ Add</button>&nbsp;&nbsp;&nbsp; <!--   <button class="inbtrnkdelbtn" id="inbrtdelsecbtnt">- Del</button> -->
+                                      <button class="inbtrnkaddbtn" type="button" id="crmaddfieldsecbtn" onclick="myfunctiontxt()">+ Add</button>&nbsp;&nbsp;&nbsp;
                                     </div>
+                                
                                   </div>
 
                                 </div>
                               </div>
-
-                              
+</div>
                               <!--Row 3 End -->
 
                               <!-- Row 4 -->
@@ -1016,12 +768,13 @@
                           </div>
                           <div class="modal-footer cprcedtpopftr">
                             <button type="button" class="btn btn-primary cprcsaddprocessbtn">Preview</button>
-                            <button type="button" class="btn btn-primary cprcsaddprocessbtn">Add / Modify</button>
+                            <input type="submit" class="btn btn-primary cprcsaddprocessbtn" value="Add / Modify">
                             <button type="button" class="btn btn-secondary cprcsaddprocessbtncls" data-bs-dismiss="modal">Close</button>
                           </div>
                         </div>
                       </div>
                     </div>
+                  </form>
                     <!-- Edit CRM Pop-Up End -->
 
                   </div>
@@ -1040,7 +793,8 @@
             <!-- Footer End -->
     
     </div>
-
+    
+      
     <script>
       const xValues = ["Total Calls", "Answered Calls", "Unanswered Calls"];
       const yValues = [55, 49, 44];
@@ -1100,6 +854,16 @@
           }
         }
       });
+
+
+      
+    function myfunctiontxt()
+    {
+    const node = document.getElementById("demotxt")
+    const clone = node.cloneNode(true);
+    document.getElementById("demotxt").appendChild(clone);
+    }
+
       </script>
 
 </body>

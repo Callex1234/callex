@@ -73,8 +73,36 @@ const crm = async (req, res) => {
 };
 
 const addCrm = async (req, res) => {
-  console.log(req.body);
-  return req.body;
+  try {
+    console.log(req.body);
+    const { crm, Message, file, Edit, label, type, option, Logo } = req.body;
+
+    const crmView = await CrmView.create({
+      name: crm,
+      customerMessage: Message,
+      file: file,
+    });
+
+    for (const { data, index } of Edit.map((data, index) => ({
+      data,
+      index,
+    }))) {
+      ð;
+      const crmfield1 = await CrmField.create({
+        edit: Edit[index],
+        label: label[index],
+        type: type[index],
+        option: option[index].split(",").map((el) => {
+          return { [el]: el };
+        }),
+        crmview: crmView.id,
+      });
+      console.log(crmfield1);
+    }
+  } catch (error) {
+    logger.error(error.message);
+    console.log(error);
+  }
 };
 
 module.exports = { crm, addCrm };

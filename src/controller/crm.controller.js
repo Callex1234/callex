@@ -74,7 +74,7 @@ const crm = async (req, res) => {
 
 const addCrm = async (req, res) => {
   console.log(req.body);
-  return res.send("akjshdghavjsk");
+  return req.body;
 };
 
 module.exports = { crm, addCrm };

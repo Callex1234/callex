@@ -12,7 +12,7 @@ const verifyToken = (req, res, next) => {
       jwt.verify(token, SECRET_KEY, function (err, decoded) {
         if (err) {
           res.clearCookie(req.cookies);
-          return res.redirect("/admin/login");
+          return res.redirect("/login");
         }
       });
     }

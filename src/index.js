@@ -5,8 +5,18 @@ const app = express();
 const createError = require("http-errors");
 const routes = require("./routes");
 const path = require("path");
+const multer = require("multer");
 const { logger } = require("./config/logger.config");
 const cookieParser = require("cookie-parser"); // Add this line.
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "public/"); // Specify the destination directory
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + "-" + file.originalname); // Specify the file name
+  },
+});
+const upload = multer({ storage: storage });
 
 require("./config/mongodb.config");
 app.use(express.json());

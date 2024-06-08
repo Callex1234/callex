@@ -7,29 +7,6 @@ const CrmAnswer = require("../modal/crmAnswer.modal");
 
 const crm = async (req, res) => {
   try {
-    // const crmView = await CrmView.create({
-    //   name: "laku",
-    //   customerMessage: "laku customerMessage",
-    //   file: "lakhu file",
-    // });
-
-    // const crmfield1 = await CrmField.create({
-    //   edit: true,
-    //   label: "laku label 1",
-    //   type: "text",
-    //   crmview: crmView.id,
-    // });
-    // const crmfield2 = await CrmField.create({
-    //   edit: false,
-    //   label: "laku label 2",
-    //   type: "select",
-    //   option: {
-    //     YES: true,
-    //     No: false,
-    //   },
-    //   crmview: crmView.id,
-    // });
-
     // const datas = await CrmField.find()
     //   .populate({
     //     path: "crmview",
@@ -51,20 +28,32 @@ const crm = async (req, res) => {
     //   });
     // }
 
-    const datadtadtadt = await CrmAnswer.find()
-      .populate([
-        {
-          path: "crmfield",
-          strictPopulate: false,
+    // const datadtadtadt = await CrmAnswer.find()
+    //   .populate([
+    //     {
+    //       path: "crmfield",
+    //       strictPopulate: false,
+    //     },
+    //     {
+    //       path: "crm",
+    //       strictPopulate: false,
+    //     },
+    //   ])
+    //   .exec();
+    // console.log(datadtadtadt);
+    const crmData = await CrmView.aggregate([
+      {
+        $lookup: {
+          from: "crmfields",
+          localField: "_id",
+          foreignField: "crmview",
+          as: "crmview",
         },
-        {
-          path: "crm",
-          strictPopulate: false,
-        },
-      ])
-      .exec();
-    console.log(datadtadtadt);
-    return res.render("admin/crm");
+      },
+    ]);
+
+    console.log(crmData);
+    return res.render("admin/crm", { crmData });
   } catch (error) {
     logger.error("Error in crm.crm => " + error.message);
     console.log(error);
@@ -72,4 +61,37 @@ const crm = async (req, res) => {
   }
 };
 
-module.exports = { crm };
+const addCrm = async (req, res) => {
+  try {
+    console.log(req.body);
+    const { crm, Message, file, Edit, label, type, option } = req.body;
+    console.log("Uploaded file:", req.file);
+    const crmView = await CrmView.create({
+      name: crm,
+      customerMessage: Message,
+      file: req.file.filename,
+    });
+
+    for (const { data, index } of Edit.map((data, index) => ({
+      data,
+      index,
+    }))) {
+      const crmfield1 = await CrmField.create({
+        edit: Edit[index],
+        label: label[index],
+        type: type[index],
+        option: option[index].split(",").map((el) => {
+          return { [el]: el };
+        }),
+        crmview: crmView.id,
+      });
+      console.log(crmfield1);
+    }
+    return res.redirect("/admin/crm");
+  } catch (error) {
+    logger.error(error.message);
+    console.log(error);
+  }
+};
+
+module.exports = { crm, addCrm };

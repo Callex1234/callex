@@ -94,4 +94,42 @@ const addCrm = async (req, res) => {
   }
 };
 
-module.exports = { crm, addCrm };
+const updateCrm = async (req, res) => {
+  try {
+    const id = req.params.id;
+    console.log(req.body);
+    const { crm, Message, Edit, label, type, option, fieldid } = req.body;
+    console.log("Uploaded file:", req.file);
+    const file = req?.file?.filename ? { file: req.file.filename } : {};
+
+    const crmView = await CrmView.findByIdAndUpdate(id, {
+      name: crm,
+      customerMessage: Message,
+      ...file,
+    });
+    console.log({ crmView });
+    for (const { data, index } of Edit.map((data, index) => ({
+      data,
+      index,
+    }))) {
+      console.log("fieldid[index]", fieldid[index]);
+      const crmfield1 = await CrmField.findByIdAndUpdate(fieldid[index], {
+        edit: Edit[index],
+        label: label[index],
+        type: type[index],
+        option: option[index].split(",").map((el) => {
+          return { [el]: el };
+        }),
+        crmview: crmView.id,
+      });
+      console.log({ crmfield1 });
+    }
+    return res.redirect("/admin/crm");
+  } catch (error) {
+    logger.error(error.message);
+    console.log(error);
+    return res.redirect("/admin/crm");
+  }
+};
+
+module.exports = { crm, addCrm, updateCrm };

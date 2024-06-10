@@ -301,7 +301,7 @@
                   <td><%=data?.process ?? '-' %></td>
                   <td><%=data.crmview.length %></td>
                   <!-- Action Column -->
-                  <td>
+                  <td class="d-flex">
                     <button type="button" class="cprcedtbtnico" data-bs-toggle="modal" data-bs-target="#updateroutemodal<%= index %>">
                       <img src="/images/Edit1.svg" alt="" width="15px">
                     </button>
@@ -314,7 +314,10 @@
                     <button type="button" class="cprcedtbtnico" data-bs-toggle="modal" data-bs-target="#addroutemodal">
                       <img src="/images/reportviewico.svg" alt="" width="15px">
                     </button>
+                    <form  action="/admin/crm/delete/<%= data._id %>" method="get">
+                    
                     <button class="cprcedtbtnico"><img src="/images/delete.svg" alt="" width="15px"></button>
+                    </form>
                   </td>
                   <!-- Action Column End -->
                 </tr>
@@ -359,7 +362,7 @@
                                   <div class="col-lg-12" style="margin-bottom: 10px;">
                                     <h3 class="inbtrnksubsecdivhdr">CRM Fields</h3>
                                   </div>
-                                  <div id="dynamicFields" >
+                                  <div id="dynamicFields<%= data._id %>" >
                                     <% data.crmview.forEach(function(field){ %>
                                     
                                       <input type="hidden" name="fieldid[]" value="<%= field._id %>">
@@ -386,7 +389,7 @@
                                           style="width: 100%;">
                                       </div>
                                       <div class="col-lg">
-                                        <select name="type[]" id="TypeBoxUpdate-<%= index %>" class="form-select nwslctmenu" onchange="Toggle('<%= index %>','TypeBoxUpdate-','option')"
+                                        <select name="type[]" id="TypeBoxUpdate-<%= data._id %>" class="form-select nwslctmenu" onchange="Toggle('<%= data._id %>','TypeBoxUpdate-','option')"
                                           aria-label="Default select example">
         
                                           <option value="text" <%= field.type=="text"? 'selected' :''  %>>Text</option>
@@ -394,8 +397,10 @@
                                           <option value="date" <%= field.type=="date"? 'selected' :''  %>>Date</option>
                                         </select>
                                       </div>
-                                      <div style="visibility: hidden;" class="col-lg" id="option<%= index%>">
+                                      <div style="visibility:<%= field.type=='select'? 'visible' :'hidden'  %>" class="col-lg" id="option<%= data._id%>">
                                         <input type="text" name="option[]" class="adlrinput" placeholder="Add Options"
+
+                                        value="<%= field.option.map(el => Object.keys(el)[0]).toString()  %>"
                                           style="width: 100%;">
                                       </div>
                                     </div>
@@ -407,7 +412,7 @@
                                   <div class="row">
                                     <div class="col-lg" style="margin-top: 0px;">
                                       <button class="inbtrnkaddbtn" type="button" id="crmaddfieldsecbtn"
-                                        onclick="myfunctiontxt()">+ Add</button>&nbsp;&nbsp;&nbsp;
+                                        onclick="myfunctiontxtUpdate('<%= data._id %>')">+ Add</button>&nbsp;&nbsp;&nbsp;
                                     </div>
         
                                   </div>
@@ -761,7 +766,7 @@
           <!-- Add CRM Pop-Up End -->
 
           <!-- Edit CRM Pop-Up -->
-          <form method="POST" action="/admin/crm"  >
+          <form method="POST" action="/admin/crm"   enctype='multipart/form-data'>
             <div class="modal fade" id="addroutemodal" tabindex="-1" aria-labelledby="addroutemodalLabel"
               aria-hidden="true">
               <div class="modal-dialog modal-xl modal-dialog-scrollable">
@@ -915,6 +920,7 @@
       }
     }
     function myfunctiontxt() {
+      console.log("asdhasdhjajshd");
       let html = `                            <div class="row g-3 mb-2" id="demotxt">
                               <div class="col-auto">
                                 <div class="gap-3" style="display: flex;">
@@ -951,6 +957,49 @@
                               </div>
                             </div>`;
                             var container = document.getElementById('dynamicFields');
+                            console.log(container);
+                            container.insertAdjacentHTML('beforeend', html);
+    }
+
+    function myfunctiontxtUpdate(id) {
+      console.log("update",{id});
+      let html = `                            <div class="row g-3 mb-2" id="demotxt">
+                              <div class="col-auto">
+                                <div class="gap-3" style="display: flex;">
+                                  <P class="cprcsactvpara" style="margin-top: 3px;">Edit?:</P>
+                                  <div class="cl-toggle-switch">
+                                      <select name="Edit[]" class="form-select nwslctmenu" >
+                                        <option value="true">
+                                            YES
+                                        </option>
+                                        <option value="false">
+                                          No
+                                      </option>
+                                      </select>
+                                     
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-lg">
+                                <input type="text" class="adlrinput" name="label[]" placeholder="Enter Label"
+                                  style="width: 100%;">
+                              </div>
+                              <div class="col-lg">
+                                <select name="type[]" id="TypeBox-${++count}" class="form-select nwslctmenu" onchange="Toggle(${count})"
+                                  aria-label="Default select example">
+
+                                  <option value="text">Text</option>
+                                  <option value="select">Select</option>
+                                  <option value="date">Date</option>
+                                </select>
+                              </div>
+                              <div style="visibility: hidden;" class="col-lg" id="${count}">
+                                <input type="text" name="option[]" class="adlrinput" placeholder="Add Options"
+                                  style="width: 100%;">
+                              </div>
+                            </div>`;
+                            var container = document.getElementById(`dynamicFields${id}`);
+                            console.log(container);
                             container.insertAdjacentHTML('beforeend', html);
     }
 

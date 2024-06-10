@@ -52,7 +52,6 @@ const crm = async (req, res) => {
       },
     ]);
 
-    console.log(crmData);
     return res.render("admin/crm", { crmData });
   } catch (error) {
     logger.error("Error in crm.crm => " + error.message);
@@ -63,7 +62,6 @@ const crm = async (req, res) => {
 
 const addCrm = async (req, res) => {
   try {
-    console.log(req.body);
     const { crm, Message, file, Edit, label, type, option } = req.body;
     console.log("Uploaded file:", req.file);
     const crmView = await CrmView.create({
@@ -132,4 +130,20 @@ const updateCrm = async (req, res) => {
   }
 };
 
-module.exports = { crm, addCrm, updateCrm };
+
+const deleteCrm = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const parent = await CrmView.find({ _id:id })
+    const child = await CrmField.find({crmview: id }).deleteMany()
+      await CrmView.find({ _id:id }).deleteMany()
+    console.log({id});
+    return res.redirect("/admin/crm");
+  } catch (error) {
+    logger.error(error.message);
+    console.log(error);
+    return res.redirect("/admin/crm");
+  }
+};
+
+module.exports = { crm, addCrm, updateCrm,deleteCrm };

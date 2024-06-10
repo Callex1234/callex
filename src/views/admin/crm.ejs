@@ -386,7 +386,7 @@
                                           style="width: 100%;">
                                       </div>
                                       <div class="col-lg">
-                                        <select name="type[]" id="TypeBox-1" class="form-select nwslctmenu" onchange="Toggle(1)"
+                                        <select name="type[]" id="TypeBoxUpdate-<%= index %>" class="form-select nwslctmenu" onchange="Toggle('<%= index %>','TypeBoxUpdate-','option')"
                                           aria-label="Default select example">
         
                                           <option value="text" <%= field.type=="text"? 'selected' :''  %>>Text</option>
@@ -394,7 +394,7 @@
                                           <option value="date" <%= field.type=="date"? 'selected' :''  %>>Date</option>
                                         </select>
                                       </div>
-                                      <div style="visibility: hidden;" class="col-lg" id="1">
+                                      <div style="visibility: hidden;" class="col-lg" id="option<%= index%>">
                                         <input type="text" name="option[]" class="adlrinput" placeholder="Add Options"
                                           style="width: 100%;">
                                       </div>
@@ -761,7 +761,7 @@
           <!-- Add CRM Pop-Up End -->
 
           <!-- Edit CRM Pop-Up -->
-          <form method="POST" action="/admin/crm" enctype='multipart/form-data' >
+          <form method="POST" action="/admin/crm"  >
             <div class="modal fade" id="addroutemodal" tabindex="-1" aria-labelledby="addroutemodalLabel"
               aria-hidden="true">
               <div class="modal-dialog modal-xl modal-dialog-scrollable">
@@ -902,10 +902,11 @@
   <script>
     let count = 1
 
-    function Toggle(id) {
-      const value1 = document.getElementById(`TypeBox-${id}`);
-      const div1 = document.getElementById(id);
-
+    function Toggle(id,text = "TypeBox-",div='') {
+      const value1 = document.getElementById(`${text}${id}`);
+      const div1 = document.getElementById(`${div}${id}`);
+      console.log(value1);
+      console.log(div1);
       if (value1.value === "select") {
         div1.style.visibility = "visible";
       }

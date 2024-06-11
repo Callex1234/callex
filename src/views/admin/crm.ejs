@@ -468,7 +468,7 @@
               <div class="modal-content rounded-0">
                 <div class="modal-header">
                   <h1 class="modal-title fs-5 cmmpopuphdr" id="addroutemodal1Label" style="font-size: 16px !important;">
-                    Add/Modify Route</h1>
+                    Add Route</h1>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -765,7 +765,7 @@
           </div>
           <!-- Add CRM Pop-Up End -->
 
-          <!-- Edit CRM Pop-Up -->
+          <!-- add CRM Pop-Up -->
           <form method="POST" action="/admin/crm"   enctype='multipart/form-data'>
             <div class="modal fade" id="addroutemodal" tabindex="-1" aria-labelledby="addroutemodalLabel"
               aria-hidden="true">
@@ -773,7 +773,7 @@
                 <div class="modal-content rounded-0">
                   <div class="modal-header">
                     <h1 class="modal-title fs-5 cmmpopuphdr" id="addroutemodalLabel"
-                      style="font-size: 16px !important;">Add/Modify Route</h1>
+                      style="font-size: 16px !important;">Add Route</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
@@ -784,11 +784,11 @@
                       <!-- Row 1 -->
                     <div class="row g-3" style="margin-bottom: 20px;">
                       <div class="col-lg-3">
-                        <input type="text" class="cprcsrchinpt" name="crm" placeholder="CRM Name" style="width: 100%;">
+                        <input type="text" class="cprcsrchinpt" name="crm" placeholder="CRM Name" style="width: 100%;" required>
                       </div>
                       <div class="col-lg-3">
                         <input type="text" class="cprcsrchinpt" name="Message" placeholder="Message"
-                          style="width: 100%;">
+                          style="width: 100%;" required>
                       </div>
                       <!-- <div class="col-lg-3">
                         <input type="file" class="cprcsrchinpt" name="file" placeholder="" style="width: 100%;">
@@ -810,7 +810,7 @@
                                 <div class="gap-3" style="display: flex;">
                                   <P class="cprcsactvpara" style="margin-top: 3px;">Edit?:</P>
                                   <div class="cl-toggle-switch">
-                                      <select name="Edit[]" class="form-select nwslctmenu" >
+                                      <select name="Edit[]" class="form-select nwslctmenu" required>
                                         <option value="true">
                                             YES
                                         </option>
@@ -824,7 +824,7 @@
                               </div>
                               <div class="col-lg">
                                 <input type="text" class="adlrinput" name="label[]" placeholder="Enter Label"
-                                  style="width: 100%;">
+                                  style="width: 100%;" required>
                               </div>
                               <div class="col-lg">
                                 <select name="type[]" id="TypeBox-1" class="form-select nwslctmenu" onchange="Toggle(1)"
@@ -862,7 +862,7 @@
                             <h3 class="inbtrnksubsecdivhdr">CRM Logo:</h3>
                           </div>
                           <div class="col-lg-1">
-                            <input name="Logo" type="file" class="crmaddbtn" value="Browse">
+                            <input name="Logo" type="file" class="crmaddbtn" value="Browse" required>
                           </div>
 
                         </div>
@@ -876,7 +876,7 @@
                   </div>
                   <div class="modal-footer cprcedtpopftr">
                     <button type="button" class="btn btn-primary cprcsaddprocessbtn">Preview</button>
-                    <input type="submit" class="btn btn-primary cprcsaddprocessbtn" value="Add / Modify">
+                    <input type="submit" class="btn btn-primary cprcsaddprocessbtn" value="Add">
                     <button type="button" class="btn btn-secondary cprcsaddprocessbtncls"
                       data-bs-dismiss="modal">Close</button>
                   </div>

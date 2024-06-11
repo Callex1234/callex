@@ -1,6 +1,8 @@
 const multer = require("multer");
-const { crm, addCrm, updateCrm } = require("../controller/crm.controller");
+
+const { crm, addCrm, updateCrm ,deleteCrm } = require("../controller/crm.controller");
 const { Scripts, addScripts } = require("../controller/script.conroller");
+
 const { process } = require("../controller/process.controller");
 const { verifyToken } = require("../middleware/auth.middleware");
 const express = require("express");
@@ -19,6 +21,7 @@ const adminRoutes = express.Router();
 adminRoutes.get("/crm", verifyToken, crm);
 adminRoutes.post("/crm", upload.single("Logo"), addCrm);
 adminRoutes.post("/crm/:id", upload.single("Logo"), updateCrm);
+adminRoutes.get("/crm/delete/:id", verifyToken, deleteCrm);
 adminRoutes.get("/script", Scripts);
 adminRoutes.post("/script", addScripts);
 adminRoutes.get("/process", process);

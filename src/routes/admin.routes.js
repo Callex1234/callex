@@ -6,6 +6,7 @@ const { Scripts, addScripts } = require("../controller/script.conroller");
 const { process } = require("../controller/process.controller");
 const { verifyToken } = require("../middleware/auth.middleware");
 const express = require("express");
+const { trunk } = require("../controller/outBoundsTrunk");
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -25,5 +26,5 @@ adminRoutes.get("/crm/delete/:id", verifyToken, deleteCrm);
 adminRoutes.get("/script", Scripts);
 adminRoutes.post("/script", addScripts);
 adminRoutes.get("/process", process);
-adminRoutes.get("/outBoundTrunk", verifyToken);
+adminRoutes.get("/outBoundTrunk", verifyToken, trunk);
 module.exports = adminRoutes;

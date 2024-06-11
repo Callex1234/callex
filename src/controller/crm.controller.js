@@ -62,6 +62,14 @@ const crm = async (req, res) => {
 
 const addCrm = async (req, res) => {
   try {
+    const { body } = req;
+    const validate = validateCrm.validate(body);
+    console.log(body);
+    if (validate?.error) {
+      logger.error("validation in crm.create");
+      logger.error(JSON.stringify(validate.error));
+      return res.redirect("/admin/crm");
+    }
     const { crm, Message, file, Edit, label, type, option } = req.body;
     console.log("Uploaded file:", req.file);
     const crmView = await CrmView.create({
@@ -130,14 +138,13 @@ const updateCrm = async (req, res) => {
   }
 };
 
-
 const deleteCrm = async (req, res) => {
   try {
     const id = req.params.id;
-    const parent = await CrmView.find({ _id:id })
-    const child = await CrmField.find({crmview: id }).deleteMany()
-      await CrmView.find({ _id:id }).deleteMany()
-    console.log({id});
+    const parent = await CrmView.find({ _id: id });
+    const child = await CrmField.find({ crmview: id }).deleteMany();
+    await CrmView.find({ _id: id }).deleteMany();
+    console.log({ id });
     return res.redirect("/admin/crm");
   } catch (error) {
     logger.error(error.message);
@@ -146,4 +153,15 @@ const deleteCrm = async (req, res) => {
   }
 };
 
-module.exports = { crm, addCrm, updateCrm,deleteCrm };
+const validateCrm = Joi.object({
+  crm: Joi.string().required(),
+  Message: Joi.string().required(),
+  Edit: Joi.array().items(Joi.string().valid("true", "false")).required(), // Assuming Edit array contains boolean values in string format
+  label: Joi.array().items(Joi.string()).required(),
+  type: Joi.array()
+    .items(Joi.string().valid("text", "select", "date"))
+    .required(), // Assuming common data types
+  option: Joi.array().items(Joi.string().allow("")).required(),
+});
+
+module.exports = { crm, addCrm, updateCrm, deleteCrm };

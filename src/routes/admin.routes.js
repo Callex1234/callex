@@ -1,6 +1,12 @@
 const multer = require("multer");
 
-const { crm, addCrm, updateCrm ,deleteCrm } = require("../controller/crm.controller");
+const {
+  crm,
+  addCrm,
+  updateCrm,
+  deleteCrm,
+  validateCrm,
+} = require("../controller/crm.controller");
 const { Scripts, addScripts } = require("../controller/script.conroller");
 
 const { process } = require("../controller/process.controller");
@@ -23,6 +29,6 @@ adminRoutes.post("/crm", upload.single("Logo"), addCrm);
 adminRoutes.post("/crm/:id", upload.single("Logo"), updateCrm);
 adminRoutes.get("/crm/delete/:id", verifyToken, deleteCrm);
 adminRoutes.get("/script", Scripts);
-adminRoutes.post("/script", addScripts);
+adminRoutes.post("/script", verifyToken, addScripts);
 adminRoutes.get("/process", process);
 module.exports = adminRoutes;

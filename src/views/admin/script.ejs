@@ -219,11 +219,12 @@
                         </tr>
                       </thead>
                       <tbody>
+              <% Scripts.forEach(function(data,index){ %>
                         <tr>
-                          <th scope="row" style="padding-left: 20px;padding-right: 20px;">Route Name</th>
-                          <td>00</td>
-                          <td>00</td>
-                          <td><img src="/images/Active.svg" alt="" width="15px"></td>
+                          <th scope="row" style="padding-left: 20px;padding-right: 20px;"><%=data.scriptName %></th>
+                       <td><%=data.text %></td>
+                          <td><%=data.isUrl %></td>
+                          <td><%=data.isActive %><img src="/images/Active.svg" alt="" width="15px"></td>
                           <!-- Action Column -->
                           <td>
                             <button type="button" class="cprcedtbtnico" data-bs-toggle="modal" data-bs-target="#addroutemodal">
@@ -233,76 +234,7 @@
                           </td>
                           <!-- Action Column End -->
                         </tr>
-                        <tr>
-                          <th scope="row" style="padding-left: 20px;padding-right: 20px;">Route Name</th>
-                          <td>00</td>
-                          <td>00</td>
-                          <td><img src="/images/Active.svg" alt="" width="15px"></td>
-                          <!-- Action Column -->
-                          <td>
-                            <button type="button" class="cprcedtbtnico" data-bs-toggle="modal" data-bs-target="#addroutemodal">
-                              <img src="/images/Edit1.svg" alt="" width="15px">
-                            </button>
-                            <button class="cprcedtbtnico"><img src="/images/delete.svg" alt="" width="15px"></button>
-                          </td>
-                          <!-- Action Column End -->
-                        </tr>
-                        <tr>
-                          <th scope="row" style="padding-left: 20px;padding-right: 20px;">Route Name</th>
-                          <td>00</td>
-                          <td>00</td>
-                          <td><img src="/images/Active.svg" alt="" width="15px"></td>
-                          <!-- Action Column -->
-                          <td>
-                            <button type="button" class="cprcedtbtnico" data-bs-toggle="modal" data-bs-target="#addroutemodal">
-                              <img src="/images/Edit1.svg" alt="" width="15px">
-                            </button>
-                            <button class="cprcedtbtnico"><img src="/images/delete.svg" alt="" width="15px"></button>
-                          </td>
-                          <!-- Action Column End -->
-                        </tr>
-                        <tr>
-                          <th scope="row" style="padding-left: 20px;padding-right: 20px;">Route Name</th>
-                          <td>00</td>
-                          <td>00</td>
-                          <td><img src="/images/Active.svg" alt="" width="15px"></td>
-                          <!-- Action Column -->
-                          <td>
-                            <button type="button" class="cprcedtbtnico" data-bs-toggle="modal" data-bs-target="#addroutemodal">
-                              <img src="/images/Edit1.svg" alt="" width="15px">
-                            </button>
-                            <button class="cprcedtbtnico"><img src="/images/delete.svg" alt="" width="15px"></button>
-                          </td>
-                          <!-- Action Column End -->
-                        </tr>
-                        <tr>
-                          <th scope="row" style="padding-left: 20px;padding-right: 20px;">Route Name</th>
-                          <td>00</td>
-                          <td>00</td>
-                          <td><img src="/images/Active.svg" alt="" width="15px"></td>
-                          <!-- Action Column -->
-                          <td>
-                            <button type="button" class="cprcedtbtnico" data-bs-toggle="modal" data-bs-target="#addroutemodal">
-                              <img src="/images/Edit1.svg" alt="" width="15px">
-                            </button>
-                            <button class="cprcedtbtnico"><img src="/images/delete.svg" alt="" width="15px"></button>
-                          </td>
-                          <!-- Action Column End -->
-                        </tr>
-                        <tr>
-                          <th scope="row" style="padding-left: 20px;padding-right: 20px;">Route Name</th>
-                          <td>00</td>
-                          <td>00</td>
-                          <td><img src="/images/Active.svg" alt="" width="15px"></td>
-                          <!-- Action Column -->
-                          <td>
-                            <button type="button" class="cprcedtbtnico" data-bs-toggle="modal" data-bs-target="#addroutemodal">
-                              <img src="/images/Edit1.svg" alt="" width="15px">
-                            </button>
-                            <button class="cprcedtbtnico"><img src="/images/delete.svg" alt="" width="15px"></button>
-                          </td>
-                          <!-- Action Column End -->
-                        </tr>
+                        <% }); %>
                       </tbody>
                     </table>
 

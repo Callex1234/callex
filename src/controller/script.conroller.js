@@ -2,8 +2,16 @@ const { logger } = require("../config/logger.config");
 const Script = require("../modal/script.modal");
 const Scripts = async (req, res) => {
   try {
-    console.log(req.body);
-    // const { script, active, url, textcontent } = req.body;
+    const Scripts = await Script.find({});
+    return res.render("admin/script", { Scripts });
+  } catch (err) {
+    logger.error("Error in process.process => " + err.message);
+    console.log(err);
+    logger.error(JSON.stringify(err));
+  }
+};
+const addScripts = async (req, res) => {
+  try {
     const addscript = await Script.create({
       scriptName: req.body.script,
       isActive: req.body.active,
@@ -12,12 +20,11 @@ const Scripts = async (req, res) => {
     });
     console.log("Script created:", addscript);
 
-    return res.render("admin/script");
+    return res.redirect("/admin/script");
   } catch (err) {
     logger.error("Error in process.process => " + err.message);
     console.log(err);
     logger.error(JSON.stringify(err));
   }
 };
-
-module.exports = { Scripts };
+module.exports = { Scripts, addScripts };

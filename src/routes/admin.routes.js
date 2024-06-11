@@ -5,5 +5,7 @@ const express = require("express");
 const adminRoutes = express.Router();
 
 adminRoutes.get("/crm", verifyToken, crm);
+adminRoutes.get("/outBoundTrunk", verifyToken);
+
 
 module.exports = adminRoutes;

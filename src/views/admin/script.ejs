@@ -174,7 +174,7 @@
                     <div class="cserveredtsec">
                       <button class="cpserveraddbtn" data-bs-toggle="modal" data-bs-target="#addroutemodal">+ Add Script</button>&nbsp;&nbsp;&nbsp;
 
-                      <!-- Add Server Password Pop-up -->
+                      <!-- Edit Server Password Pop-up -->
                       <div class="modal fade" id="addservermodal" tabindex="-1" aria-labelledby="addservermodalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                           <div class="modal-content rounded-0">
@@ -204,6 +204,9 @@
             </div>
             <!-- Section One End -->
 
+
+                                <!-- add Process Pop-Up -->
+
             <!-- Section Two-->
             <div class="row g-4 d-flex justify-content-center" style="margin-bottom: 0px;">
               <div class="col-md-12">
@@ -227,18 +230,96 @@
                           <td><%=data.isActive %><img src="/images/Active.svg" alt="" width="15px"></td>
                           <!-- Action Column -->
                           <td>
-                            <button type="button" class="cprcedtbtnico" data-bs-toggle="modal" data-bs-target="#addroutemodal">
+                            <button type="button" class="cprcedtbtnico" data-bs-toggle="modal" data-bs-target="#updateroutemodal<%= index %>">
                               <img src="/images/Edit1.svg" alt="" width="15px">
                             </button>
-                            <button class="cprcedtbtnico"><img src="/images/delete.svg" alt="" width="15px"></button>
+                            <form  action="/admin/script/delete/<%= data._id %>" method="get">
+                    
+                              <button class="cprcedtbtnico"><img src="/images/delete.svg" alt="" width="15px"></button>
+                              </form>
                           </td>
                           <!-- Action Column End -->
                         </tr>
+                        <form method="POST" action="/admin/script/<%= data._id %>">
+
+                          <div class="modal fade" id="updateroutemodal<%= index %>" tabindex="-1" aria-labelledby="updateroutemodal" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content rounded-0">
+                                <div class="modal-header">
+                                  <h1 class="modal-title fs-5 cmmpopuphdr" id="updateroutemodal<%= index %>" style="font-size: 16px !important;">Modify Route</h1>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                  <P>
+                                    <!-- Form Starts Here -->
+                                    <!-- Row 1.1 -->
+                              <input type="hidden" name="id" value="<%= data._id %>">
+                                    <div class="row g-3" style="margin-bottom: 20px;">
+                                      <div class="col-lg-6" style="margin-bottom: 30px;">
+                                        <input name="script" type="text" class="cprcsrchinpt" value="<%= data.scriptName %>" placeholder="Script Name" style="width: 100%;">
+                                      </div>
+                                      <div class="col-lg-6">
+                                        <div style="display: flex;margin-top: 3px;">
+                                          <P class="cprcsactvpara" style="margin-top: 3px;">Is Active?:</P>
+                                          <div class="cl-toggle-switch">
+                                            <select name="active" class="form-select nwslctmenu" >
+                                              <option <%= data.isActive==true? 'selected' :''  %>  value="true">
+                                                  YES
+                                              </option>
+                                              <option value="false" <%= data.isActive==false? 'selected' :''  %> >
+                                                No
+                                            </option>
+                                            </select>
+                                           
+                                        </div>
+                                        </div>
+                                      </div>
+                                      <div class="col-lg-12">
+                                        <div style="display: flex;margin-top: 3px;">
+                                          <P class="cprcsactvpara" style="margin-top: 3px;">URL:</P>
+                                          <div class="cl-toggle-switch">
+                                            <select name="url" class="form-select nwslctmenu" >
+                                              <option <%= data.isUrl==true? 'selected' :''  %>  value="true">
+                                                  YES
+                                              </option>
+                                              <option value="false" <%= data.isUrl==false? 'selected' :''  %> >
+                                                No
+                                            </option>
+                                            </select>
+                                          </div> 
+                                          <P class="cprcsactvpara" style="margin-top: 3px;">Text Content:</P>
+                                        </div>
+                                      </div>
+                                      
+                                     
+                                      <div class="col-lg-12">
+                                        <textarea name="textcontent"  value="<%= data.text %>" class="cprcsrchinpt" name="" id="" rows="3" style="width: 100%;"></textarea>
+                                      </div>
+                                    </div>
+                                    <!--Row 1 End -->
+      
+                                    <!-- Form Ends Here-->
+                                  </P>
+                                </div>
+                                <div class="modal-footer cprcedtpopftr">
+                                  <input type="submit" class="btn btn-primary cprcsaddprocessbtn" value="Modify">
+                                  <button type="button" class="btn btn-secondary cprcsaddprocessbtncls" data-bs-dismiss="modal">Close</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- Edit Process Pop-Up End -->
+                        </form>
+      
                         <% }); %>
                       </tbody>
                     </table>
 
-                    <!-- Edit Process Pop-Up -->
+
+
+
+                    
+                    <!-- add Process Pop-Up -->
 <form method="POST" action="/admin/script">
 
                     <div class="modal fade" id="addroutemodal" tabindex="-1" aria-labelledby="addroutemodalLabel" aria-hidden="true">
@@ -254,13 +335,13 @@
                               <!-- Row 1.1 -->
                               <div class="row g-3" style="margin-bottom: 20px;">
                                 <div class="col-lg-6" style="margin-bottom: 30px;">
-                                  <input name="script" type="text" class="cprcsrchinpt" placeholder="Script Name Name" style="width: 100%;">
+                                  <input name="script" type="text" class="cprcsrchinpt" placeholder="Script Name" style="width: 100%;" required>
                                 </div>
                                 <div class="col-lg-6">
                                   <div style="display: flex;margin-top: 3px;">
                                     <P class="cprcsactvpara" style="margin-top: 3px;">Is Active?:</P>
                                     <div class="cl-toggle-switch">
-                                      <select name="active" class="form-select nwslctmenu" >
+                                      <select name="active" class="form-select nwslctmenu" required>
                                         <option value="true">
                                             YES
                                         </option>
@@ -277,7 +358,7 @@
                                     <P class="cprcsactvpara" style="margin-top: 3px;">URL:</P>
                                     <div class="cl-toggle-switch">
                                       <label class="cl-switch">
-                                        <input name="url" type="checkbox" value="true">
+                                        <input name="url" type="checkbox" value="true" required>
                                         <span></span>
                                       </label>
                                     </div> 
@@ -287,7 +368,7 @@
                                 
                                
                                 <div class="col-lg-12">
-                                  <textarea name="textcontent" placeholder="textcontent" class="cprcsrchinpt" name="" id="" rows="3" style="width: 100%;"></textarea>
+                                  <textarea name="textcontent" placeholder="textcontent" class="cprcsrchinpt" name="" id="" rows="3" style="width: 100%;" required></textarea>
                                 </div>
                               </div>
                               <!--Row 1 End -->
@@ -296,7 +377,7 @@
                             </P>
                           </div>
                           <div class="modal-footer cprcedtpopftr">
-                            <input type="submit" class="btn btn-primary cprcsaddprocessbtn" value="Add / Modify">
+                            <input type="submit" class="btn btn-primary cprcsaddprocessbtn" value="Add">
                             <button type="button" class="btn btn-secondary cprcsaddprocessbtncls" data-bs-dismiss="modal">Close</button>
                           </div>
                         </div>

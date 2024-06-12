@@ -1,5 +1,5 @@
 const multer = require("multer");
-
+const { routes, addroutes } = require("../controller/route.controller");
 const {
   crm,
   addCrm,
@@ -39,4 +39,7 @@ adminRoutes.post("/script/:id", verifyToken, updateScripts);
 adminRoutes.post("/script", verifyToken, addScripts);
 adminRoutes.get("/process", process);
 adminRoutes.get("/outBoundTrunk", verifyToken, trunk);
+adminRoutes.get("/routes", routes);
+adminRoutes.post("/routes", addroutes);
+
 module.exports = adminRoutes;

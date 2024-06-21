@@ -765,166 +765,32 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th
-                    scope="row"
-                    style="padding-left: 20px; padding-right: 20px"
-                  >
-                    Route Name
-                  </th>
-                  <td>00</td>
-                  <td><img src="/images/Active.svg" alt="" width="15px" /></td>
-                  <!-- Action Column -->
-                  <td>
-                    <button
-                      type="button"
-                      class="cprcedtbtnico"
-                      data-bs-toggle="modal"
-                      data-bs-target="#addroutemodal"
-                    >
-                      <img src="/images/Edit1.svg" alt="" width="15px" />
-                    </button>
-                    <button class="cprcedtbtnico">
-                      <img src="/images/delete.svg" alt="" width="15px" />
-                    </button>
-                  </td>
-                  <!-- Action Column End -->
-                </tr>
-                <tr>
-                  <th
-                    scope="row"
-                    style="padding-left: 20px; padding-right: 20px"
-                  >
-                    Route Name
-                  </th>
-                  <td>00</td>
-                  <td><img src="/images/Active.svg" alt="" width="15px" /></td>
-                  <!-- Action Column -->
-                  <td>
-                    <button
-                      type="button"
-                      class="cprcedtbtnico"
-                      data-bs-toggle="modal"
-                      data-bs-target="#addroutemodal"
-                    >
-                      <img src="/images/Edit1.svg" alt="" width="15px" />
-                    </button>
-                    <button class="cprcedtbtnico">
-                      <img src="/images/delete.svg" alt="" width="15px" />
-                    </button>
-                  </td>
-                  <!-- Action Column End -->
-                </tr>
-                <tr>
-                  <th
-                    scope="row"
-                    style="padding-left: 20px; padding-right: 20px"
-                  >
-                    Route Name
-                  </th>
-                  <td>00</td>
-                  <td><img src="/images/Active.svg" alt="" width="15px" /></td>
-                  <!-- Action Column -->
-                  <td>
-                    <button
-                      type="button"
-                      class="cprcedtbtnico"
-                      data-bs-toggle="modal"
-                      data-bs-target="#addroutemodal"
-                    >
-                      <img src="/images/Edit1.svg" alt="" width="15px" />
-                    </button>
-                    <button class="cprcedtbtnico">
-                      <img src="/images/delete.svg" alt="" width="15px" />
-                    </button>
-                  </td>
-                  <!-- Action Column End -->
-                </tr>
-                <tr>
-                  <th
-                    scope="row"
-                    style="padding-left: 20px; padding-right: 20px"
-                  >
-                    Route Name
-                  </th>
-                  <td>00</td>
-                  <td><img src="/images/Active.svg" alt="" width="15px" /></td>
-                  <!-- Action Column -->
-                  <td>
-                    <button
-                      type="button"
-                      class="cprcedtbtnico"
-                      data-bs-toggle="modal"
-                      data-bs-target="#addroutemodal"
-                    >
-                      <img src="/images/Edit1.svg" alt="" width="15px" />
-                    </button>
-                    <button class="cprcedtbtnico">
-                      <img src="/images/delete.svg" alt="" width="15px" />
-                    </button>
-                  </td>
-                  <!-- Action Column End -->
-                </tr>
-                <tr>
-                  <th
-                    scope="row"
-                    style="padding-left: 20px; padding-right: 20px"
-                  >
-                    Route Name
-                  </th>
-                  <td>00</td>
-                  <td><img src="/images/Active.svg" alt="" width="15px" /></td>
-                  <!-- Action Column -->
-                  <td>
-                    <button
-                      type="button"
-                      class="cprcedtbtnico"
-                      data-bs-toggle="modal"
-                      data-bs-target="#addroutemodal"
-                    >
-                      <img src="/images/Edit1.svg" alt="" width="15px" />
-                    </button>
-                    <button class="cprcedtbtnico">
-                      <img src="/images/delete.svg" alt="" width="15px" />
-                    </button>
-                  </td>
-                  <!-- Action Column End -->
-                </tr>
-                <tr>
-                  <th
-                    scope="row"
-                    style="padding-left: 20px; padding-right: 20px"
-                  >
-                    Route Name
-                  </th>
-                  <td>00</td>
-                  <td><img src="/images/Active.svg" alt="" width="15px" /></td>
-                  <!-- Action Column -->
-                  <td>
-                    <button
-                      type="button"
-                      class="cprcedtbtnico"
-                      data-bs-toggle="modal"
-                      data-bs-target="#addroutemodal"
-                    >
-                      <img src="/images/Edit1.svg" alt="" width="15px" />
-                    </button>
-                    <button class="cprcedtbtnico">
-                      <img src="/images/delete.svg" alt="" width="15px" />
-                    </button>
-                  </td>
-                  <!-- Action Column End -->
-                </tr>
-              </tbody>
-            </table>
+                <% routes.forEach(function(data,index){ %>
+                  <tr>
+                    <th scope="row" style="padding-left: 20px;padding-right: 20px;"><%=data.routeName %></th>
+                 <td><%=data.routeDesc %></td>
+                    <td><%=data.active %></td>
+                            <!-- Action Column -->
+                    <td>
+                      <button type="button" class="cprcedtbtnico" data-bs-toggle="modal" data-bs-target="#updateroutemodal<%= index %>">
+                        <img src="/images/Edit1.svg" alt="" width="15px">
+                      </button>
+                      <form  action="/admin/routes/delete/<%= data._id %>" method="get">
+              
+                        <button class="cprcedtbtnico"><img src="/images/delete.svg" alt="" width="15px"></button>
+                        </form>
+                    </td>
+                    <!-- Action Column End -->
+                  </tr>
 
-            <!-- Edit Process Pop-Up -->
-            <form method="post" action="/admin/routes">
+
+            <!-- edit Process Pop-Up -->
+            <form method="POST" action="/admin/routes/<%= data._id %>">
               <div
                 class="modal fade"
-                id="addroutemodal"
+                id="updateroutemodal<%= index %>"
                 tabindex="-1"
-                aria-labelledby="addroutemodalLabel"
+                aria-labelledby="updateroutemodal"
                 aria-hidden="true"
               >
                 <div class="modal-dialog modal-xl modal-dialog-scrollable">
@@ -932,10 +798,10 @@
                     <div class="modal-header">
                       <h1
                         class="modal-title fs-5 cmmpopuphdr"
-                        id="addroutemodalLabel"
+                        id="updateroutemodal<%= index %>"
                         style="font-size: 16px !important"
                       >
-                        Add Route
+                        Modify Route
                       </h1>
                       <button
                         type="button"
@@ -945,6 +811,8 @@
                       ></button>
                     </div>
                     <div class="modal-body">
+                      <input type="hidden" name="id" value="<%= data._id %>">
+
                       <!-- Form Starts Here -->
 
                       <!-- Row 1.1 -->
@@ -955,6 +823,7 @@
                             name="routename"
                             class="cprcsrchinpt"
                             placeholder="Route Name"
+                            value="<%= data.routeName %>"
                             style="width: 100%"
                           />
                         </div>
@@ -964,24 +833,28 @@
                             name="description"
                             class="cprcsrchinpt"
                             placeholder="Route Description"
+                            value="<%=data.routeDesc %>"
                             style="width: 100%"
                           />
                         </div>
                         <div class="col-lg-3">
                           <input
                             type="number"
-                            name="digit"
+                            name="digits"
+                            placeholder="Enter Digits"
                             class="cprcsrchinpt"
-                            placeholder="Add Digits"
+                            
+                           value=" <%=data.digits %> "
                             style="width: 100%"
                           />
                         </div>
                         <div class="col-lg-3">
                           <div class="dropdown">
                             <select
-                              name="routemethod"
+                              name="routeMethod"
                               class="btn btn-secondary dropdown-toggle prcedtdrpdwnbtn"
                               aria-labelledby="dropdownMenuButton1"
+                              value="<%=data.routeMethod %>"
                             >
                               <option value="serial">Serial</option>
                               <option value="random">Random</option>
@@ -994,12 +867,14 @@
                               >Is Route Active?:</P
                             >
                             <div class="cl-toggle-switch">
-                              <label class="cl-switch">
-                                <input
-                                  name="active"
-                                  type="checkbox"
-                                  value="true"
-                                />
+                              <select name="active" class="form-select nwslctmenu" >
+                                <option <%= data.active==true? 'selected' :''  %>  value="true">
+                                    YES
+                                </option>
+                                <option value="false" <%= data.active==false? 'selected' :''  %> >
+                                  No
+                              </option>
+                              </select>
                                 <span></span>
                               </label>
                             </div>
@@ -1027,18 +902,12 @@
                                     size="5"
                                     style="margin-bottom: 10px"
                                   >
-                                    <option value="option one">
-                                      Option One
+                                  <% data.availableTrunk.forEach(function(trunk) { %>
+                                    <option value="<%=trunk %>">
+                                      <%=trunk%>
                                     </option>
-                                    <option value="option two">
-                                      Option Two
-                                    </option>
-                                    <option value="option three">
-                                      Option Three
-                                    </option>
-                                    <option value="option four">
-                                      Option Four
-                                    </option>
+                                    <% }); %>
+                                    
                                   </select>
                                   <div style="display: flex">
                                     <button class="addbluebtn">
@@ -1062,18 +931,11 @@
                                     size="5"
                                     style="margin-bottom: 10px"
                                   >
-                                    <option value="option one">
-                                      Option One
+                                  <% data.selectedTrunk.forEach(function(trunk) { %>
+                                    <option value="<%=trunk %>">
+                                      <%=trunk%>
                                     </option>
-                                    <option value="option two">
-                                      Option Two
-                                    </option>
-                                    <option value="option three">
-                                      Option Three
-                                    </option>
-                                    <option value="option four">
-                                      Option Four
-                                    </option>
+                                    <% }); %>
                                   </select>
                                   <div style="display: flex">
                                     <button class="addbluebtn">
@@ -1098,7 +960,7 @@
                       <input
                         type="submit"
                         class="btn btn-primary cprcsaddprocessbtn"
-                        value="Add"
+                        value="Modify"
                       />
                       <button
                         type="button"
@@ -1113,10 +975,222 @@
               </div>
               <!-- add Process Pop-Up End -->
             </form>
+            <% }); %>
+
+                      </tbody>
+                    </table>
           </div>
         </div>
       </div>
       <!-- Section Two End -->
+
+
+
+
+
+<!-- add Process Pop-Up -->
+<form method="POST" action="/admin/routes">
+  <div
+    class="modal fade"
+    id="addroutemodal"
+    tabindex="-1"
+    aria-labelledby="addroutemodalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-xl modal-dialog-scrollable">
+      <div class="modal-content rounded-0">
+        <div class="modal-header">
+          <h1
+            class="modal-title fs-5 cmmpopuphdr"
+            id="addroutemodalLabel"
+            style="font-size: 16px !important"
+          >
+            Add Route
+          </h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <!-- Form Starts Here -->
+
+          <!-- Row 1.1 -->
+          <div class="row g-3" style="margin-bottom: 20px">
+            <div class="col-lg-3">
+              <input
+                type="text"
+                name="routename"
+                class="cprcsrchinpt"
+                placeholder="Route Name"
+                style="width: 100%"
+                required
+              />
+            </div>
+            <div class="col-lg-3">
+              <input
+                type="text"
+                name="description"
+                class="cprcsrchinpt"
+                placeholder="Route Description"
+                style="width: 100%" required
+              />
+            </div>
+            <div class="col-lg-3">
+              <input
+                type="number"
+                name="digit"
+                class="cprcsrchinpt"
+                placeholder="Add Digits"
+                style="width: 100%" required
+              />
+            </div>
+            <div class="col-lg-3">
+              <div class="dropdown">
+                <select
+                  name="routemethod"
+                  class="btn btn-secondary dropdown-toggle prcedtdrpdwnbtn"
+                  aria-labelledby="dropdownMenuButton1"
+                >
+                  <option value="serial">Serial</option>
+                  <option value="random">Random</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div style="display: flex; margin-top: 3px">
+                <P class="cprcsactvpara" style="margin-top: 3px"
+                  >Is Route Active?:</P
+                >
+                <div class="cl-toggle-switch">
+                  <select name="active" class="form-select nwslctmenu" required>
+                    <option value="true">
+                        YES
+                    </option>
+                    <option  value="false">
+                      No
+                  </option>
+                  </select>
+                    <span></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Row 1 End -->
+
+          <!-- Row 2 -->
+          <div class="row g-3" style="margin-bottom: 20px">
+            <div class="col-lg-12">
+              <div style="background-color: #f7f6fb; padding: 20px">
+                <div class="row g-3">
+                  <div class="col-lg-12">
+                    <h1 class="cprcedtfrmsechdr">Trunk Set</h1>
+                  </div>
+                  <div class="col-lg-6">
+                    <div>
+                      <h1 class="cmmpopuphdr2">Available Trunks</h1>
+                      <select
+                        class="cprcedtslctmulti"
+                        name="availableTrunk"
+                        id=""
+                        multiple
+                        size="5"
+                        style="margin-bottom: 10px" required
+                      >
+                        <option value="option one">
+                          Option One
+                        </option>
+                        <option value="option two">
+                          Option Two
+                        </option>
+                        <option value="option three">
+                          Option Three
+                        </option>
+                        <option value="option four">
+                          Option Four
+                        </option>
+                      </select>
+                      <div style="display: flex">
+                        <button class="addbluebtn">
+                          <i
+                            class="fa-solid fa-forward"
+                          ></i></button
+                        >&nbsp;&nbsp;<button class="removeredbtn">
+                          <i class="fa-solid fa-backward"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div>
+                      <h1 class="cmmpopuphdr2">Selected Trunks</h1>
+                      <select
+                        class="cprcedtslctmulti"
+                        name="selectedTrunk"
+                        id=""
+                        multiple
+                        size="5"
+                        style="margin-bottom: 10px" required
+                      >
+                        <option value="option one">
+                          Option One
+                        </option>
+                        <option value="option two">
+                          Option Two
+                        </option>
+                        <option value="option three">
+                          Option Three
+                        </option>
+                        <option value="option four">
+                          Option Four
+                        </option>
+                      </select>
+                      <div style="display: flex">
+                        <button class="addbluebtn">
+                          <i
+                            class="fa-solid fa-caret-up"
+                          ></i></button
+                        >&nbsp;&nbsp;<button class="removeredbtn">
+                          <i class="fa-solid fa-caret-down"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Row 2 End -->
+
+          <!-- Form Ends Here-->
+        </div>
+        <div class="modal-footer cprcedtpopftr">
+          <input
+            type="submit"
+            class="btn btn-primary cprcsaddprocessbtn"
+            value="Add"
+          />
+          <button
+            type="button"
+            class="btn btn-secondary cprcsaddprocessbtncls"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- add Process Pop-Up End -->
+</form>
+</div>
+</div>
+</div>
+<!-- Section Two End -->
+
 
       <!-- Footer -->
       <div class="row d-flex justify-content-center">
@@ -1128,68 +1202,5 @@
       </div>
       <!-- Footer End -->
     </div>
-
-    <script>
-      const xValues = ["Total Calls", "Answered Calls", "Unanswered Calls"];
-      const yValues = [55, 49, 44];
-      const barColors = ["#f4783b", "#3cbb96", "#6259ca"];
-
-      new Chart("myChart7", {
-        type: "line",
-        data: {
-          labels: xValues,
-          datasets: [
-            {
-              backgroundColor: barColors,
-              data: yValues,
-            },
-          ],
-        },
-        options: {
-          title: {
-            display: false,
-            text: "World Wide Wine Production 2018",
-          },
-        },
-      });
-
-      new Chart("myChart8", {
-        type: "line",
-        data: {
-          labels: xValues,
-          datasets: [
-            {
-              backgroundColor: barColors,
-              data: yValues,
-            },
-          ],
-        },
-        options: {
-          title: {
-            display: false,
-            text: "World Wide Wine Production 2018",
-          },
-        },
-      });
-
-      new Chart("myChart9", {
-        type: "line",
-        data: {
-          labels: xValues,
-          datasets: [
-            {
-              backgroundColor: barColors,
-              data: yValues,
-            },
-          ],
-        },
-        options: {
-          title: {
-            display: false,
-            text: "World Wide Wine Production 2018",
-          },
-        },
-      });
-    </script>
   </body>
 </html>

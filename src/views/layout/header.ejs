@@ -1,141 +1,608 @@
 <div class="row d-flex justify-content-center">
-    <div class="col-md-12 mainnavimp">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light mainnavcss">
-        <div class="container-fluid" style="padding-left: 0px;padding-right: 20px;">
-          <a class="navbar-brand" href="#" style="padding-top: 0px;padding-bottom: 0px;"><img src="/images/callexlogoblk.svg" alt="" style="width: 167px;"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown" style="padding: 20px;">
-            <ul class="navbar-nav" style="margin-left: auto;">
-              <li class="nav-item mainnavmainitem">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item dropdown mainnavmainitem" style="appearance: none;">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Monitoring Tools <img src="/images/dropdownicon.svg" alt="" style="width: 8px;padding-bottom: 2px;">
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end navdrpdwncss1" aria-labelledby="navbarDropdownMenuLink">
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <h1 class="navitemhdr">Live Status</h1>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/processstatusicon.svg" alt="" style="width: 40px;">Process Status</a></li>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/trunkstatusicon.svg" alt="" style="width: 40px;">Trunk Status</a></li>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/queuestatusicon.svg" alt="" style="width: 40px;">Queue Status</a></li>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/dashboardicon.svg" alt="" style="width: 40px;">Dashboard</a></li>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/callexwebpanelicon.svg" alt="" style="width: 40px;">Convox Web Panel</a></li>
-                      <div class="dropdown-divider"></div>
-                    </div>
+  <div class="col-md-12 mainnavimp">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mainnavcss">
+      <div
+        class="container-fluid"
+        style="padding-left: 0px; padding-right: 20px"
+      >
+        <a
+          class="navbar-brand"
+          href="#"
+          style="padding-top: 0px; padding-bottom: 0px"
+          ><img src="/images/callexlogoblk.svg" alt="" style="width: 167px"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse"
+          id="navbarNavDropdown"
+          style="padding: 20px"
+        >
+          <ul class="navbar-nav" style="margin-left: auto">
+            <li class="nav-item mainnavmainitem">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li
+              class="nav-item dropdown mainnavmainitem"
+              style="appearance: none"
+            >
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Monitoring Tools
+                <img
+                  src="/images/dropdownicon.svg"
+                  alt=""
+                  style="width: 8px; padding-bottom: 2px"
+                />
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-end navdrpdwncss1"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+                <div class="row">
+                  <div class="col-lg-12">
+                    <h1 class="navitemhdr">Live Status</h1>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/processstatusicon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Process Status</a
+                      >
+                    </li>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/trunkstatusicon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Trunk Status</a
+                      >
+                    </li>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/queuestatusicon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Queue Status</a
+                      >
+                    </li>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/dashboardicon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Dashboard</a
+                      >
+                    </li>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/callexwebpanelicon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Convox Web Panel</a
+                      >
+                    </li>
+                    <div class="dropdown-divider"></div>
                   </div>
-                </ul>
-              </li>
-              <li class="nav-item dropdown mainnavmainitem">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  System Settings <img src="/images/dropdownicon.svg" alt="" style="width: 8px;padding-bottom: 2px;">
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end navdrpdwncss2" aria-labelledby="navbarDropdownMenuLink">
-                  <div class="row">
-                    <div class="col-lg-4">
-                      <h1 class="navitemhdr">System Config</h1>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/stationicon.svg" alt="" style="width: 40px;">Stations</a></li>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/internalstationicon.svg" alt="" style="width: 40px;">Internal Stations</a></li>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/prigroupsicon.svg" alt="" style="width: 40px;">PRI Groups</a></li>
-                      <div class="dropdown-divider"></div>
-                    </div>
-                    <div class="col-lg-4 navmblscrnmrg">
-                      <h1 class="navitemhdr">Call Routing</h1>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/inboundroutesicon.svg" alt="" style="width: 40px;">Inbound Routes</a></li>
-                      <li style="display: flex;"><a class="dropdown-item" href="/admin/outbound-trunk"><img src="/images/outboundboundtrunksicon.svg" alt="" style="width: 40px;">Outbound Trunks</a></li>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/outboundboundrountesicon.svg" alt="" style="width: 40px;">Outbound Routes</a></li>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/callforwardicon.svg" alt="" style="width: 40px;">Call Forward Routes</a></li>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/hottransfericon.svg" alt="" style="width: 40px;">Hot Transfer Route</a></li>
-                      <div class="dropdown-divider"></div>
-                    </div>
-                    <div class="col-lg-4 navmblscrnmrg">
-                      <h1 class="navitemhdr">IVR</h1>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/audiofilesicon.svg" alt="" style="width: 40px;">Audio Files</a></li>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/ivrsicon.svg" alt="" style="width: 40px;">IVRS</a></li>
-                      <div class="dropdown-divider"></div>
-                    </div>
+                </div>
+              </ul>
+            </li>
+            <li class="nav-item dropdown mainnavmainitem">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                System Settings
+                <img
+                  src="/images/dropdownicon.svg"
+                  alt=""
+                  style="width: 8px; padding-bottom: 2px"
+                />
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-end navdrpdwncss2"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+                <div class="row">
+                  <div class="col-lg-4">
+                    <h1 class="navitemhdr">System Config</h1>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/stationicon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Stations</a
+                      >
+                    </li>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/internalstationicon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Internal Stations</a
+                      >
+                    </li>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/prigroupsicon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />PRI Groups</a
+                      >
+                    </li>
+                    <div class="dropdown-divider"></div>
                   </div>
-                  <div class="row" style="margin-top: 40px;">
-                    <div class="col-lg-4">
-                      <h1 class="navitemhdr">CRM</h1>
-                      <li style="display: flex;"><a class="dropdown-item" href="/admin/crm"><img src="/images/crmicon.svg" alt="" style="width: 40px;">CRM</a></li>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/listicon.svg" alt="" style="width: 40px;">Lists</a></li>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/callbackassignmenticon.svg" alt="" style="width: 40px;">Callback Assignments</a></li>
-                      <li style="display: flex;"><a class="dropdown-item" href="/admin/script"><img src="/images/scriptsicon.svg" alt="" style="width: 40px;">Script</a></li>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/blockcallicon.svg" alt="" style="width: 40px;">Block Caller</a></li>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/autoemailicon.svg" alt="" style="width: 40px;">Auto Email Settings</a></li>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/ivrcallbacksettingsicon.svg" alt="" style="width: 40px;">IVR Callback Lead Settings</a></li>
-                      <div class="dropdown-divider"></div>
-                    </div>
-                    <div class="col-lg-4 navmblscrnmrg">
-                      <h1 class="navitemhdr">ACD & Queue</h1>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/usersicon.svg" alt="" style="width: 40px;">Users</a></li>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/processicon.svg" alt="" style="width: 40px;">Process</a></li>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/queuesicon.svg" alt="" style="width: 40px;">Queues</a></li>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/breaksicon.svg" alt="" style="width: 40px;">Breaks</a></li>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/dispositionicon.svg" alt="" style="width: 40px;">Disposition</a></li>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/subdispositionicon.svg" alt="" style="width: 40px;">Sub Disposition</a></li>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/subsubdispositionicon.svg" alt="" style="width: 40px;">Sub Sub Disposition</a></li>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/leadreattempticon.svg" alt="" style="width: 40px;">Lead Re-attmepts</a></li>
-                    </div>
+                  <div class="col-lg-4 navmblscrnmrg">
+                    <h1 class="navitemhdr">Call Routing</h1>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/inboundroutesicon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Inbound Routes</a
+                      >
+                    </li>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="/admin/outbound-trunk"
+                        ><img
+                          src="/images/outboundboundtrunksicon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Outbound Trunks</a
+                      >
+                    </li>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/outboundboundrountesicon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Outbound Routes</a
+                      >
+                    </li>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/callforwardicon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Call Forward Routes</a
+                      >
+                    </li>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/hottransfericon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Hot Transfer Route</a
+                      >
+                    </li>
+                    <div class="dropdown-divider"></div>
                   </div>
-                </ul>
-              </li>
-              <li class="nav-item dropdown mainnavmainitem">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Reports <img src="/images/dropdownicon.svg" alt="" style="width: 8px;padding-bottom: 2px;">
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end navdrpdwncss3" aria-labelledby="navbarDropdownMenuLink">
-                  <div class="row">
-                    <div class="col-lg-6">
-                      <h1 class="navitemhdr">Agent Analysis</h1>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/reporticon.svg" alt="" style="width: 40px;">Agent Custom Login Report</a></li>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/reporticon.svg" alt="" style="width: 40px;">Agent Custom Performance Report</a></li>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/reporticon.svg" alt="" style="width: 40px;">Agent Disposition</a></li>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/reporticon.svg" alt="" style="width: 40px;">Queue Custom Performance Report</a></li>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/reporticon.svg" alt="" style="width: 40px;">Leads Re-attempts Report</a></li>
-                      <div class="dropdown-divider"></div>
-                    </div>
-                    <div class="col-lg-6 navmblscrnmrg">
-                      <h1 class="navitemhdr">Process Analysis</h1>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/reporticon.svg" alt="" style="width: 40px;">Hourly Process Report</a></li>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/reporticon.svg" alt="" style="width: 40px;">Daily Process Report</a></li>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/reporticon.svg" alt="" style="width: 40px;">Predictive Outbound Report</a></li>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/reporticon.svg" alt="" style="width: 40px;">Preview Outbound Report</a></li>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/reporticon.svg" alt="" style="width: 40px;">Progressive Outbound Report</a></li>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/reporticon.svg" alt="" style="width: 40px;">Call Recording Report</a></li>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/reporticon.svg" alt="" style="width: 40px;">Dump Report</a></li>
-                      <div class="dropdown-divider"></div>
-                    </div>
+                  <div class="col-lg-4 navmblscrnmrg">
+                    <h1 class="navitemhdr">IVR</h1>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="/admin/audio"
+                        ><img
+                          src="/images/audiofilesicon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Audio Files</a
+                      >
+                    </li>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/ivrsicon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />IVRS</a
+                      >
+                    </li>
+                    <div class="dropdown-divider"></div>
                   </div>
-                  <div class="row" style="margin-top: 40px;">
-                    <div class="col-lg-6">
-                      <h1 class="navitemhdr">Call Traffic Analysis</h1>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/reporticon.svg" alt="" style="width: 40px;">Hourly Call Hits</a></li>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/reporticon.svg" alt="" style="width: 40px;">Daily Call Hits</a></li>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/reporticon.svg" alt="" style="width: 40px;">DID Wise Report</a></li>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/reporticon.svg" alt="" style="width: 40px;">Followup Report</a></li>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/reporticon.svg" alt="" style="width: 40px;">Missed Call Report</a></li>
-                      <div class="dropdown-divider"></div>
-                    </div>
-                    <div class="col-lg-6 navmblscrnmrg">
-                      <h1 class="navitemhdr">Conference Analysis</h1>
-                      <li style="display: flex;"><a class="dropdown-item" href="#"><img src="/images/reporticon.svg" alt="" style="width: 40px;">Conference Report</a></li>
-                    </div>
+                </div>
+                <div class="row" style="margin-top: 40px">
+                  <div class="col-lg-4">
+                    <h1 class="navitemhdr">CRM</h1>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="/admin/crm"
+                        ><img
+                          src="/images/crmicon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />CRM</a
+                      >
+                    </li>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/listicon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Lists</a
+                      >
+                    </li>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/callbackassignmenticon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Callback Assignments</a
+                      >
+                    </li>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="/admin/script"
+                        ><img
+                          src="/images/scriptsicon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Script</a
+                      >
+                    </li>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/blockcallicon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Block Caller</a
+                      >
+                    </li>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/autoemailicon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Auto Email Settings</a
+                      >
+                    </li>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/ivrcallbacksettingsicon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />IVR Callback Lead Settings</a
+                      >
+                    </li>
+                    <div class="dropdown-divider"></div>
                   </div>
-                </ul>
-              </li>
-              <li class="nav-item" style="display: flex;align-items: center;padding-left: 10px;">
-                <a class="nav-link" href="#"><img src="/images/userimage.svg" alt="" style="width: 30px;"></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                <a class="nav-link" href="#"><img src="/images/gearimage.svg" alt="" style="width: 20px;"></a>&nbsp;&nbsp;&nbsp;&nbsp;
-                <a class="nav-link" href="#"><img src="/images/logoutimage.svg" alt="" style="width: 20px;"></a>
-              </li>
-            </ul>
-          </div>
+                  <div class="col-lg-4 navmblscrnmrg">
+                    <h1 class="navitemhdr">ACD & Queue</h1>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/usersicon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Users</a
+                      >
+                    </li>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/processicon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Process</a
+                      >
+                    </li>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/queuesicon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Queues</a
+                      >
+                    </li>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/breaksicon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Breaks</a
+                      >
+                    </li>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/dispositionicon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Disposition</a
+                      >
+                    </li>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/subdispositionicon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Sub Disposition</a
+                      >
+                    </li>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/subsubdispositionicon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Sub Sub Disposition</a
+                      >
+                    </li>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/leadreattempticon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Lead Re-attmepts</a
+                      >
+                    </li>
+                  </div>
+                </div>
+              </ul>
+            </li>
+            <li class="nav-item dropdown mainnavmainitem">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Reports
+                <img
+                  src="/images/dropdownicon.svg"
+                  alt=""
+                  style="width: 8px; padding-bottom: 2px"
+                />
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-end navdrpdwncss3"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+                <div class="row">
+                  <div class="col-lg-6">
+                    <h1 class="navitemhdr">Agent Analysis</h1>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/reporticon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Agent Custom Login Report</a
+                      >
+                    </li>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/reporticon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Agent Custom Performance Report</a
+                      >
+                    </li>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/reporticon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Agent Disposition</a
+                      >
+                    </li>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/reporticon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Queue Custom Performance Report</a
+                      >
+                    </li>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/reporticon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Leads Re-attempts Report</a
+                      >
+                    </li>
+                    <div class="dropdown-divider"></div>
+                  </div>
+                  <div class="col-lg-6 navmblscrnmrg">
+                    <h1 class="navitemhdr">Process Analysis</h1>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/reporticon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Hourly Process Report</a
+                      >
+                    </li>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/reporticon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Daily Process Report</a
+                      >
+                    </li>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/reporticon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Predictive Outbound Report</a
+                      >
+                    </li>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/reporticon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Preview Outbound Report</a
+                      >
+                    </li>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/reporticon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Progressive Outbound Report</a
+                      >
+                    </li>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/reporticon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Call Recording Report</a
+                      >
+                    </li>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/reporticon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Dump Report</a
+                      >
+                    </li>
+                    <div class="dropdown-divider"></div>
+                  </div>
+                </div>
+                <div class="row" style="margin-top: 40px">
+                  <div class="col-lg-6">
+                    <h1 class="navitemhdr">Call Traffic Analysis</h1>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/reporticon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Hourly Call Hits</a
+                      >
+                    </li>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/reporticon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Daily Call Hits</a
+                      >
+                    </li>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/reporticon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />DID Wise Report</a
+                      >
+                    </li>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/reporticon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Followup Report</a
+                      >
+                    </li>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/reporticon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Missed Call Report</a
+                      >
+                    </li>
+                    <div class="dropdown-divider"></div>
+                  </div>
+                  <div class="col-lg-6 navmblscrnmrg">
+                    <h1 class="navitemhdr">Conference Analysis</h1>
+                    <li style="display: flex">
+                      <a class="dropdown-item" href="#"
+                        ><img
+                          src="/images/reporticon.svg"
+                          alt=""
+                          style="width: 40px"
+                        />Conference Report</a
+                      >
+                    </li>
+                  </div>
+                </div>
+              </ul>
+            </li>
+            <li
+              class="nav-item"
+              style="display: flex; align-items: center; padding-left: 10px"
+            >
+              <a class="nav-link" href="#"
+                ><img
+                  src="/images/userimage.svg"
+                  alt=""
+                  style="width: 30px" /></a
+              >&nbsp;&nbsp;&nbsp;&nbsp;
+              <a class="nav-link" href="#"
+                ><img
+                  src="/images/gearimage.svg"
+                  alt=""
+                  style="width: 20px" /></a
+              >&nbsp;&nbsp;&nbsp;&nbsp;
+              <a class="nav-link" href="#"
+                ><img src="/images/logoutimage.svg" alt="" style="width: 20px"
+              /></a>
+            </li>
+          </ul>
         </div>
-      </nav>
-    </div>
+      </div>
+    </nav>
   </div>
+</div>

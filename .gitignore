@@ -8,3 +8,5 @@ src/logs
 src/public/logos/*
 !src/public/logos/.gitkeep 
 src/logs
+src/public/audio/*
+!src/public/audio/.gitkeep 

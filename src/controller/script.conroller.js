@@ -11,7 +11,12 @@ const Scripts = async (req, res) => {
     logger.error(JSON.stringify(err));
   }
 };
-
+validateScripts = Joi.object({
+  script: Joi.string().min(3).max(255).required(),
+  active: Joi.boolean().required(),
+  url: Joi.boolean().required(),
+  textcontent: Joi.string().min(1).required(),
+});
 const updateScripts = async (req, res) => {
   try {
     const id = req.params.id;
@@ -28,6 +33,7 @@ const updateScripts = async (req, res) => {
       },
       { new: true }
     );
+
     console.log("updated script", updatedScript);
     return res.redirect("/admin/script");
   } catch (err) {
@@ -75,12 +81,5 @@ const addScripts = async (req, res) => {
     logger.error(JSON.stringify(err));
   }
 };
-
-validateScripts = Joi.object({
-  script: Joi.string().min(3).max(255).required(),
-  active: Joi.boolean().required(),
-  url: Joi.boolean().required(),
-  textcontent: Joi.string().min(1).required(),
-});
 
 module.exports = { Scripts, addScripts, updateScripts, deleteScripts };

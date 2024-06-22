@@ -28,7 +28,10 @@ const {
 const { process } = require("../controller/process.controller");
 const { verifyToken } = require("../middleware/auth.middleware");
 const express = require("express");
-const { trunk } = require("../controller/outBoundsTrunk");
+const {
+  trunk,
+  createTrunk,
+} = require("../controller/outBoundsTrunk.controller");
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -51,6 +54,8 @@ const upload = multer({ storage: storage });
 const audiouploads = multer({ storage: filestorage });
 const adminRoutes = express.Router();
 
+adminRoutes.post("/trunks", createTrunk);
+adminRoutes.get("/outBoundTrunk", trunk);
 adminRoutes.get("/crm", verifyToken, crm);
 adminRoutes.post("/crm", upload.single("Logo"), addCrm);
 adminRoutes.post("/crm/:id", upload.single("Logo"), updateCrm);

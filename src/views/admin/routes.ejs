@@ -771,7 +771,7 @@
                  <td><%=data.routeDesc %></td>
                     <td><%=data.active %></td>
                             <!-- Action Column -->
-                    <td>
+                    <td class="d-flex">
                       <button type="button" class="cprcedtbtnico" data-bs-toggle="modal" data-bs-target="#updateroutemodal<%= index %>">
                         <img src="/images/Edit1.svg" alt="" width="15px">
                       </button>
@@ -897,24 +897,24 @@
                                   <select
                                     class="cprcedtslctmulti"
                                     name="availableTrunk"
-                                    id=""
+                                    id="availableTrunk_<%= index %>"
                                     multiple
                                     size="5"
                                     style="margin-bottom: 10px"
                                   >
-                                  <% data.availableTrunk.forEach(function(trunk) { %>
-                                    <option value="<%=trunk %>">
-                                      <%=trunk%>
+                                  <% outboundTruck.forEach(function(trunk) { %>
+                                    <option value="<%=trunk.id %>">
+                                      <%=trunk.name%>
                                     </option>
                                     <% }); %>
-                                    
                                   </select>
                                   <div style="display: flex">
-                                    <button class="addbluebtn">
+                                    <button type="button" onclick="move_right(document.getElementById('availableTrunk_<%= index %>'),document.getElementById('selectedTrunk_<%= index %>'))" class="addbluebtn">
                                       <i
                                         class="fa-solid fa-forward"
                                       ></i></button
-                                    >&nbsp;&nbsp;<button class="removeredbtn">
+                                    >&nbsp;&nbsp;
+                                    <button class="removeredbtn"  onclick="move_left(document.getElementById('selectedTrunk_<%= index %>'),document.getElementById('availableTrunk_<%= index %>'))" type="button">
                                       <i class="fa-solid fa-backward"></i>
                                     </button>
                                   </div>
@@ -926,23 +926,24 @@
                                   <select
                                     class="cprcedtslctmulti"
                                     name="selectedTrunk"
-                                    id=""
+                                    id="selectedTrunk_<%= index %>"
                                     multiple
                                     size="5"
                                     style="margin-bottom: 10px"
                                   >
                                   <% data.selectedTrunk.forEach(function(trunk) { %>
+                                    <% let option = outboundTruck.find((el) => el.id == trunk ) %>
                                     <option value="<%=trunk %>">
-                                      <%=trunk%>
+                                       <%= option?.name %>
                                     </option>
                                     <% }); %>
                                   </select>
                                   <div style="display: flex">
-                                    <button class="addbluebtn">
+                                    <button class="addbluebtn" type="button" onclick="move_up('selectedTrunk_<%= index %>')">
                                       <i
                                         class="fa-solid fa-caret-up"
                                       ></i></button
-                                    >&nbsp;&nbsp;<button class="removeredbtn">
+                                    >&nbsp;&nbsp;<button class="removeredbtn"  type="button" onclick="move_bottom('selectedTrunk_<%= index %>')">
                                       <i class="fa-solid fa-caret-down"></i>
                                     </button>
                                   </div>
@@ -1095,30 +1096,24 @@
                       <select
                         class="cprcedtslctmulti"
                         name="availableTrunk"
-                        id=""
+                        id="availableTrunkAdd"
                         multiple
                         size="5"
-                        style="margin-bottom: 10px" required
+                        style="margin-bottom: 10px" 
                       >
-                        <option value="option one">
-                          Option One
+                      <% outboundTruck.forEach(function(trunk) { %>
+                        <option value="<%=trunk.id %>">
+                          <%=trunk.name%>
                         </option>
-                        <option value="option two">
-                          Option Two
-                        </option>
-                        <option value="option three">
-                          Option Three
-                        </option>
-                        <option value="option four">
-                          Option Four
-                        </option>
+                        <% }); %>
                       </select>
                       <div style="display: flex">
-                        <button class="addbluebtn">
+                        <button type="button" onclick="move_right(document.getElementById('availableTrunkAdd'),document.getElementById('selectedTrunkAdd'))" class="addbluebtn">
                           <i
                             class="fa-solid fa-forward"
                           ></i></button
-                        >&nbsp;&nbsp;<button class="removeredbtn">
+                        >&nbsp;&nbsp;
+                        <button class="removeredbtn"  onclick="move_left(document.getElementById('selectedTrunkAdd'),document.getElementById('availableTrunkAdd'))" type="button">
                           <i class="fa-solid fa-backward"></i>
                         </button>
                       </div>
@@ -1130,30 +1125,18 @@
                       <select
                         class="cprcedtslctmulti"
                         name="selectedTrunk"
-                        id=""
+                        id="selectedTrunkAdd"
                         multiple
                         size="5"
                         style="margin-bottom: 10px" required
                       >
-                        <option value="option one">
-                          Option One
-                        </option>
-                        <option value="option two">
-                          Option Two
-                        </option>
-                        <option value="option three">
-                          Option Three
-                        </option>
-                        <option value="option four">
-                          Option Four
-                        </option>
                       </select>
                       <div style="display: flex">
-                        <button class="addbluebtn">
+                        <button class="addbluebtn" type="button" onclick="move_up('selectedTrunkAdd')">
                           <i
                             class="fa-solid fa-caret-up"
                           ></i></button
-                        >&nbsp;&nbsp;<button class="removeredbtn">
+                        >&nbsp;&nbsp;<button class="removeredbtn"  type="button" onclick="move_bottom('selectedTrunkAdd')">
                           <i class="fa-solid fa-caret-down"></i>
                         </button>
                       </div>
@@ -1202,5 +1185,52 @@
       </div>
       <!-- Footer End -->
     </div>
+    <script>
+      
+      function move_right(left, right) {
+			for (var i = 0; i < left.options.length; i++) {
+				if (left.options[i].selected) {
+					right.options[right.options.length] = new Option(left.options[i].text, left.options[i].value);
+					left.options[i--] = null;
+				}
+			}
+		}
+
+		function move_left(right, left) {
+			for (var i = 0; i < right.options.length; i++) {
+				if (right.options[i].selected) {
+					left.options[left.options.length] = new Option(right.options[i].text, right.options[i].value);
+					right.options[i--] = null;
+				}
+			}
+		}
+
+    function move_bottom(selected_tabs) {
+			var selected_tabs = document.getElementById(selected_tabs);
+			var selectOptions = selected_tabs.getElementsByTagName('option');
+			for (var i = selectOptions.length - 2; i >= 0; i--) {
+				var opt = selectOptions[i];
+				if (opt.selected) {
+					var nextOpt = selectOptions[selectOptions.length - 1];
+					opt = selected_tabs.removeChild(opt);
+					nextOpt = selected_tabs.replaceChild(opt, nextOpt);
+					selected_tabs.insertBefore(nextOpt, opt);
+				}
+			}
+		}
+
+		function move_up(selected_tabs) {
+			var selected_tabs = document.getElementById(selected_tabs);
+			var selectOptions = selected_tabs.getElementsByTagName('option');
+			for (var i = 1; i < selectOptions.length; i++) {
+				var opt = selectOptions[i];
+				if (opt.selected) {
+					selected_tabs.removeChild(opt);
+					selected_tabs.insertBefore(opt, selectOptions[i - 1]);
+				}
+			}
+		}
+
+    </script>
   </body>
 </html>

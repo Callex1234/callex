@@ -31,6 +31,7 @@ const express = require("express");
 const {
   trunk,
   createTrunk,
+  deleteTrunks,
 } = require("../controller/outBoundsTrunk.controller");
 
 const storage = multer.diskStorage({
@@ -55,6 +56,7 @@ const audiouploads = multer({ storage: filestorage });
 const adminRoutes = express.Router();
 
 adminRoutes.post("/trunks", createTrunk);
+adminRoutes.get("/trunks/delete/:id", deleteTrunks);
 adminRoutes.get("/outBoundTrunk", trunk);
 adminRoutes.get("/crm", verifyToken, crm);
 adminRoutes.post("/crm", upload.single("Logo"), addCrm);

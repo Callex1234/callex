@@ -7,7 +7,7 @@ const path = require("path");
 const audio = async (req, res) => {
   try {
     const Audiofile = await Audio.find({});
-    console.log(Audiofile);
+    // console.log(Audiofile);
     return res.render("admin/audio", { Audiofile: Audiofile });
   } catch (err) {
     logger.error("Error in process.process => " + err.message);

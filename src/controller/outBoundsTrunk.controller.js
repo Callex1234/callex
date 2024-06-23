@@ -51,4 +51,17 @@ const createTrunk = async (req, res) => {
   }
   return res.redirect("/admin/outBoundTrunk");
 };
-module.exports = { trunk, createTrunk };
+const deleteTrunks = async (req, res) => {
+  try {
+    const id = req.params.id;
+    await outboundTrunkVoip.findByIdAndDelete(id);
+    await outBoundTrunk.findByIdAndDelete(id);
+    console.log({ id });
+    return res.redirect("/admin/outBoundTrunk");
+  } catch (error) {
+    logger.error(error.message);
+    console.log(error);
+    return res.redirect("/admin/outBoundTrunk");
+  }
+};
+module.exports = { trunk, createTrunk, deleteTrunks };

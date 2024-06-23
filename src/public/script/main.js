@@ -432,6 +432,28 @@ $(document).ready(function () {
   });
   /* Callex Edit Process Manipulation End */
 
+  /* Callex Outbound Trunk Edit Manipulation */
+  $("#otpstnedit").on("click", function () {
+    $("#otdahdiedit").show();
+    $("#ottechnologyedit").show();
+    $("#otipaddedit").hide();
+    $("#otaccdetailsedit").hide();
+  });
+  $("#otvoipedit").on("click", function () {
+    $("#otdahdiedit").hide();
+    $("#ottechnologyedit").hide();
+    $("#otipaddedit").hide();
+    $("#otaccdetailsedit").show();
+  });
+  $("#otdirectipedit").on("click", function () {
+    $("#otdahdiedit").hide();
+    $("#ottechnologyedit").hide();
+    $("#otipaddedit").show();
+    $("#otaccdetailsedit").hide();
+  });
+
+  /* Callex Outbound Trunk Edit Manipulation End */
+
   /* Callex Outbound Trunk Manipulation */
   $("#otpstn").on("click", function () {
     $("#otdahdi").show();

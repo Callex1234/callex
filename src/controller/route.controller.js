@@ -1,11 +1,14 @@
 const { logger } = require("../config/logger.config");
+const outBoundTrunk = require("../modal/outBoundTrunk.modal");
 const Routes = require("../modal/outRoutes.modal");
 const Joi = require("joi");
 
 const routes = async (req, res) => {
   try {
     const routes = await Routes.find({});
-    return res.render("admin/routes", { routes });
+    const outboundTruck = await outBoundTrunk.find({});
+    
+    return res.render("admin/routes", { routes , outboundTruck});
   } catch (err) {
     logger.error("Error in process.process => " + err.message);
     console.log(err);
@@ -15,19 +18,17 @@ const routes = async (req, res) => {
 
 const addroutes = async (req, res) => {
   try {
-    console.log(req.body);
     const addroutes = await Routes.create({
       routeName: req.body.routename,
       routeDesc: req.body.description,
       active: req?.body?.active ? req?.body?.active : false,
       digits: req.body.digit,
       routeMethod: req.body.routemethod,
-      availableTrunk: req.body.availableTrunk,
       selectedTrunk: req.body.selectedTrunk,
     });
     console.log("outboundRoute created:", addroutes);
 
-    return res.render("admin/routes");
+    return res.redirect("/admin/routes");
   } catch (err) {
     logger.error("Error in process.process => " + err.message);
     console.log(err);

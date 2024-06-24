@@ -15,7 +15,7 @@ const trunk = async (req, res) => {
         },
       },
     ]);
-    // console.log(outBoundTrunkdata);
+    console.log(outBoundTrunkdata[2]);
     return res.render("admin/outBoundTrunk", { outBoundTrunkdata });
   } catch (error) {
     logger.error("Error in crm.crm => " + error.message);

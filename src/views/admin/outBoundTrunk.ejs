@@ -99,7 +99,7 @@
                           </td>
                           <!-- Action Column End -->
                         </tr>
-<!-- add Process Pop-Up -->
+<!-- edit Process Pop-Up -->
 <div class="modal fade" id="edittrunk<%= data._id %>" tabindex="-1" aria-labelledby="edtouttrunkpopLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable">
     <div class="modal-content rounded-0">
@@ -148,14 +148,14 @@
                 <!-- <button type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                   Trunk Type &nbsp;&nbsp;&nbsp;&nbsp; <img src="/images/accordionicon.svg" alt="" style="width: 8px;padding-bottom: 2px;">
                 </button> -->
-                <select name="trunktype" onchange="changeTypeEdit(this)" class="btn btn-secondary dropdown-toggle prcedtdrpdwnbtn" aria-labelledby="dropdownMenuButton1edit">
+                <select name="trunktype" onchange="changeTypeEdit(this,'<%= index %>')" class="btn btn-secondary dropdown-toggle prcedtdrpdwnbtn" aria-labelledby="dropdownMenuButton1edit">
                   <option class="dropdown-item" id="otpstnedit" value="PSTN" <%= data.type=='PSTN'? 'selected' :''  %> >PSTN</option>
                   <option class="dropdown-item" id="otvoipedit" value="VOIP" <%= data.type=="VOIP"? 'selected' :''  %> >VOIP</option>
                   <option class="dropdown-item" id="otdirectipedit" value="Direct-IP" <%= data.type=="Direct-IP"? 'selected' :''  %> >Direct-IP</option>
                 </select>
               </div>
             </div>
-            <div class="col-lg-12" id="ottechnologyedit">
+            <div class="col-lg-12" id="ottechnologyedit<%= index %>" style="display:<%= data.type=="VOIP"? 'none' :'block'  %> ;">
               <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle prcedtdrpdwnbtn" type="button" id="dropdownMenuButton1edit" data-bs-toggle="dropdown" aria-expanded="false">
                   Technology &nbsp;&nbsp;&nbsp;&nbsp; <img src="/images/accordionicon.svg" alt="" style="width: 8px;padding-bottom: 2px;">
@@ -167,17 +167,17 @@
                 
               </div>
             </div>
-            <div class="col-lg-12" id="otdahdiedit">
+            <div class="col-lg-12" id="otdahdiedit<%= index %>" style="display:<%= data.type=="VOIP"? 'none' :'block'  %> ;">
               <input type="text" class="cprcsrchinpt" name="" placeholder="dahdi/Zap ID (ex r1, r2...)" style="width: 100%;">
             </div>
-            <div class="col-lg-12" id="otipaddedit">
+            <div class="col-lg-12" id="otipaddedit<%= index %>" style="display:<%= data.type=="VOIP"? 'none' :'block'  %> ;" >
               <input type="text" class="cprcsrchinpt" placeholder="IP Address" style="width: 100%;">
             </div>
           </div>
           <!--Row 2 End -->
 
           <!-- Row 2.1 -->
-          <div class="row g-3" id="otaccdetailsedit" style="padding-left: 10px;padding-right: 10px;margin-bottom: 20px;">
+          <div class="row g-3" id="otaccdetailsedit<%= index %>" style="padding-left: 10px;padding-right: 10px;margin-bottom: 20px;" >
             <div class="col-lg-12" style="background-color:#f7f6fb;padding: 10px;">
               <div class="row g-2">
                 <div class="col-lg-12">
@@ -188,13 +188,13 @@
                     <P class="cprcsactvpara" style="margin-top: 3px;">Trunk Active?:</P>
                     <div class="cl-toggle-switch">
                       <label class="cl-switch">
-                        <input type="checkbox" <%= data.active==true? 'checked' :''  %> name="customSetting" onchange="handleVoipEdit(this)">
+                        <input type="checkbox" <%= data.outboundtrunks[0].customSetting==true? 'checked' :''  %> name="customSetting" onchange="handleVoipEdit(this,'<%=index%>')">
                         <span></span>
                       </label>
                     </div>
                   </div>
                 </div>
-                <div id="voipshowedit">
+                <div id="voipshowedit<%= index%>" style="display: <%= data.outboundtrunks[0].customSetting? 'none':'block' %>;">
                   <div class="col-lg-12">
                     <div class="dropdown" style="background-color: white;">
                       <select class="cdshseconedrpdwn" aria-labelledby="dropdownMenuButton1" name="type">
@@ -216,7 +216,7 @@
                     <input type="text" name="context"  class="cprcsrchinpt" placeholder="Context" style="width: 100%;">
                   </div>
                 </div>
-                <div id="voipTextBoxedit" style="display: none;">
+                <div id="voipTextBoxedit<%= index %>" style="display: <%= data.outboundtrunks[0].customSetting? 'block':'none' %>;">
                   <div class="col-lg-12">
                     <span> SIP Account</span>
                     <textarea name="SIPAccount" class="cprcsrchinpt" style="width: 100%;" ></textarea>
@@ -479,25 +479,25 @@
 
         }
       }
-      function changeTypeEdit(element) {
+      function changeTypeEdit(element,index) {
         
         if(element.value=="VOIP"){
-          $("#otdahdiedit").hide();
-          $("#ottechnologyedit").hide();
-          $("#otipaddedit").hide();
-          $("#otaccdetailsedit").show();
+          $(`#otdahdiedit${index}`).hide();
+          $(`#ottechnologyedit${index}`).hide();
+          $(`#otipaddedit${index}`).hide();
+          $(`#otaccdetailsedit${index}`).show();
         }
       }
 
-      function handleVoipEdit(element){
+      function handleVoipEdit(element,index){
         if(element.checked)
         {
-          $("#voipTextBoxedit").show();
-          $("#voipshowedit").hide();
+          $(`#voipTextBoxedit${index}`).show();
+          $(`#voipshowedit${index}`).hide();
         }
         else{
-          $("#voipTextBoxedit").hide();
-          $("#voipshowedit").show();
+          $(`#voipTextBoxedit${index}`).hide();
+          $(`#voipshowedit${index}`).show();
 
         }
       }

@@ -5,6 +5,7 @@ const outboundTrunkVoip = require("../modal/outboundTrunkVoip.modal");
 
 const trunk = async (req, res) => {
   try {
+    const findvoip = await outboundTrunkVoip.find({});
     const outBoundTrunkdata = await outBoundTrunk.aggregate([
       {
         $lookup: {
@@ -15,10 +16,13 @@ const trunk = async (req, res) => {
         },
       },
     ]);
-    console.log(outBoundTrunkdata[2]);
-    return res.render("admin/outBoundTrunk", { outBoundTrunkdata });
+    // console.log(
+    //   outBoundTrunkdata[1].outboundtrunks[0].accountID,
+    //   "outBoundTrunk ::::::"
+    // );
+    return res.render("admin/outBoundTrunk", { outBoundTrunkdata, findvoip });
   } catch (error) {
-    logger.error("Error in crm.crm => " + error.message);
+    logger.error("Error in trunk => " + error.message);
     console.log(error);
     logger.error(JSON.stringify(error));
   }
@@ -51,6 +55,57 @@ const createTrunk = async (req, res) => {
   }
   return res.redirect("/admin/outBoundTrunk");
 };
+
+const updateTrunk = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const {
+      name,
+      description,
+      channels,
+      active,
+      trunktype,
+      type,
+      accountID,
+      password,
+      IPAddress,
+      context,
+      SIPAccount,
+      customSetting,
+    } = req.body;
+    const updatedTrunks = await outBoundTrunk.findByIdAndUpdate(
+      id,
+      {
+        name: req.body.name,
+        description: req.body.description,
+        channels: req.body.channels,
+        active: req.body.active,
+        trunktype: req.body.trunktype,
+      },
+
+      { new: true }
+    );
+    const updatedVoip = await outboundTrunkVoip.findOneAndUpdate(
+      { outboundTrunk: id },
+      {
+        type: req.body.type,
+        accountID: req.body.accountID,
+        password: req.body.password,
+        IPAddress: req.body.IPAddress,
+        context: req.body.context,
+        SIPAccount: req.body.SIPAccount,
+      },
+      { new: true }
+    );
+    console.log(updatedVoip);
+    return res.redirect("/admin/outBoundTrunk");
+  } catch (error) {
+    logger.error(error.message);
+    console.log(error);
+    return res.redirect("/admin/outBoundTrunk");
+  }
+};
+
 const deleteTrunks = async (req, res) => {
   try {
     const id = req.params.id;
@@ -64,4 +119,4 @@ const deleteTrunks = async (req, res) => {
     return res.redirect("/admin/outBoundTrunk");
   }
 };
-module.exports = { trunk, createTrunk, deleteTrunks };
+module.exports = { trunk, createTrunk, deleteTrunks, updateTrunk };

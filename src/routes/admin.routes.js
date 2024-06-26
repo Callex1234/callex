@@ -32,6 +32,7 @@ const {
   trunk,
   createTrunk,
   deleteTrunks,
+  updateTrunk,
 } = require("../controller/outBoundsTrunk.controller");
 
 const storage = multer.diskStorage({
@@ -76,4 +77,5 @@ adminRoutes.get("/audio/delete/:id", verifyToken, deleteAudio);
 adminRoutes.get("/audio/download/:id", verifyToken, downloadAudio);
 adminRoutes.post("/audio", audiouploads.single("audiofile"), addAudio);
 adminRoutes.get("/outbound-trunk", verifyToken, trunk);
+adminRoutes.post("/trunks/:id", updateTrunk);
 module.exports = adminRoutes;

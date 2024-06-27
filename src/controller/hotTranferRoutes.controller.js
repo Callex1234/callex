@@ -3,8 +3,9 @@ const Joi = require("joi");
 const hotTranferRoute = require("../modal/hottransferRoute.modal");
 const hotTranfer = async (req, res) => {
   try {
-    // const Call = callForwordRoutes.find({});
-    return res.render("admin/hotTransferRoutes");
+    const data = hotTranferRoute.find({});
+    console.log({ data });
+    return res.render("admin/hotTransferRoutes", { data });
   } catch (err) {
     logger.error("Error in process.process => " + err.message);
     console.log(err);

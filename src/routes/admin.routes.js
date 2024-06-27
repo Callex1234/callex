@@ -1,4 +1,6 @@
 const multer = require("multer");
+const { index } = require("../controller/callForwordRoutes.controller");
+const { hotTranfer } = require("../controller/hotTranferRoutes.controller");
 const {
   audio,
   addAudio,
@@ -78,4 +80,6 @@ adminRoutes.get("/audio/download/:id", verifyToken, downloadAudio);
 adminRoutes.post("/audio", audiouploads.single("audiofile"), addAudio);
 adminRoutes.get("/outbound-trunk", verifyToken, trunk);
 adminRoutes.post("/trunks/:id", updateTrunk);
+adminRoutes.get("/callforward", verifyToken, index);
+adminRoutes.get("/hotTransferRoutes", verifyToken, hotTranfer);
 module.exports = adminRoutes;

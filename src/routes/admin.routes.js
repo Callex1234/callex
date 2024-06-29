@@ -1,5 +1,10 @@
 const multer = require("multer");
-const { index } = require("../controller/callForwordRoutes.controller");
+const {
+  index,
+  createCallforword,
+  updateCallforword,
+  deleteCallforward,
+} = require("../controller/callForwordRoutes.controller");
 const { hotTranfer } = require("../controller/hotTranferRoutes.controller");
 const {
   audio,
@@ -58,28 +63,31 @@ const upload = multer({ storage: storage });
 const audiouploads = multer({ storage: filestorage });
 const adminRoutes = express.Router();
 
-adminRoutes.post("/trunks", createTrunk);
-adminRoutes.get("/trunks/delete/:id", deleteTrunks);
-adminRoutes.get("/outBoundTrunk", trunk);
+adminRoutes.post("/trunks", verifyToken, createTrunk);
+adminRoutes.get("/trunks/delete/:id", verifyToken, deleteTrunks);
+adminRoutes.get("/outBoundTrunk", verifyToken, trunk);
 adminRoutes.get("/crm", verifyToken, crm);
 adminRoutes.post("/crm", upload.single("Logo"), addCrm);
 adminRoutes.post("/crm/:id", upload.single("Logo"), updateCrm);
 adminRoutes.get("/crm/delete/:id", verifyToken, deleteCrm);
 adminRoutes.get("/script/delete/:id", verifyToken, deleteScripts);
 adminRoutes.get("/routes/delete/:id", verifyToken, deleteRoutes);
-adminRoutes.get("/script", Scripts);
+adminRoutes.get("/script", verifyToken, Scripts);
 adminRoutes.post("/script/:id", verifyToken, updateScripts);
 adminRoutes.post("/script", verifyToken, addScripts);
-adminRoutes.get("/process", process);
-adminRoutes.get("/routes", routes);
+adminRoutes.get("/process", verifyToken, process);
+adminRoutes.get("/routes", verifyToken, routes);
 adminRoutes.post("/routes", verifyToken, addroutes);
 adminRoutes.post("/routes/:id", verifyToken, updateRoutes);
-adminRoutes.get("/audio", audio);
+adminRoutes.get("/audio", verifyToken, audio);
 adminRoutes.get("/audio/delete/:id", verifyToken, deleteAudio);
 adminRoutes.get("/audio/download/:id", verifyToken, downloadAudio);
 adminRoutes.post("/audio", audiouploads.single("audiofile"), addAudio);
 adminRoutes.get("/outbound-trunk", verifyToken, trunk);
-adminRoutes.post("/trunks/:id", updateTrunk);
+adminRoutes.post("/trunks/:id", verifyToken, updateTrunk);
 adminRoutes.get("/callforward", verifyToken, index);
+adminRoutes.post("/callforward", verifyToken, createCallforword);
+adminRoutes.post("/callforward/:id", verifyToken, updateCallforword);
+adminRoutes.get("/callforward/delete/:id", verifyToken, deleteCallforward);
 adminRoutes.get("/hotTransferRoutes", verifyToken, hotTranfer);
 module.exports = adminRoutes;

@@ -4,7 +4,7 @@ const CallforwordRoute = new mongoose.Schema({
     type: String,
     require: true,
   },
-  routeDesc: {
+  desc: {
     type: String,
     require: false,
   },

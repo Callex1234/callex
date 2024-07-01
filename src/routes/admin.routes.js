@@ -5,7 +5,7 @@ const {
   updateCallforword,
   deleteCallforward,
 } = require("../controller/callForwordRoutes.controller");
-const { hotTranfer } = require("../controller/hotTranferRoutes.controller");
+const { hotTranfer, createHotTranfer, updateHotTranfer, deleteHotTranfer } = require("../controller/hotTranferRoutes.controller");
 const {
   audio,
   addAudio,
@@ -90,4 +90,7 @@ adminRoutes.post("/callforward", verifyToken, createCallforword);
 adminRoutes.post("/callforward/:id", verifyToken, updateCallforword);
 adminRoutes.get("/callforward/delete/:id", verifyToken, deleteCallforward);
 adminRoutes.get("/hotTransferRoutes", verifyToken, hotTranfer);
+adminRoutes.post("/hotTransferRoutes", verifyToken, createHotTranfer);
+adminRoutes.post("/hotTransferRoutes/:id", verifyToken, updateHotTranfer);
+adminRoutes.get("/hotTransferRoutes/delete/:id", verifyToken, deleteHotTranfer);
 module.exports = adminRoutes;

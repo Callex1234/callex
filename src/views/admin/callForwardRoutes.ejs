@@ -147,7 +147,7 @@
                                           <div>
                                             <h1 class="cmmpopuphdr2">Available Trunks</h1>
                                             <select name="availableTrunk[]" class="cprcedtslctmulti" id="availableTrunk_<%= index %>" multiple size="5" style="margin-bottom: 10px;">
-                                              <% outboundTruck.forEach(function(trunk) { %>
+                                              <%  outboundTruck.filter(el => !data.selectedTrunk.includes(el.id)).forEach(function(trunk) { %>
                                                 <option value="<%=trunk.id %>">
                                                   <%=trunk.name%>
                                                 </option>
@@ -339,7 +339,7 @@
             function move_right(left, right) {
 			for (var i = 0; i < left.options.length; i++) {
 				if (left.options[i].selected) {
-					right.options[right.options.length] = new Option(left.options[i].text, left.options[i].value);
+					right.options[right.options.length] = new Option(left.options[i].text, left.options[i].value,false,true);
 					left.options[i--] = null;
 				}
 			}
@@ -348,10 +348,14 @@
 		function move_left(right, left) {
 			for (var i = 0; i < right.options.length; i++) {
 				if (right.options[i].selected) {
-					left.options[left.options.length] = new Option(right.options[i].text, right.options[i].value);
+					left.options[left.options.length] = new Option(right.options[i].text, right.options[i].value,false,true);
 					right.options[i--] = null;
 				}
 			}
+      for (var i = 0; i < right.options.length; i++) {
+        right.options[i].selected = true
+      }
+
 		}
 
     function move_bottom(selected_tabs) {

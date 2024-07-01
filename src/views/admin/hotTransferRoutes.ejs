@@ -78,88 +78,156 @@
                         </tr>
                       </thead>
                       <tbody>
+                <% Data.forEach(function(data,index){ %>
                         <tr>
-                          <th scope="row" style="padding-left: 20px;padding-right: 20px;">Route Name</th>
-                          <td>00</td>
-                          <td><img src="/images/Active.svg" alt="" width="15px"></td>
+                          <th scope="row" style="padding-left: 20px;padding-right: 20px;"><%=data.name %></th>
+                          <td><%=data.desc %></td>
+                          
+                          
+                            <td><% if(data.active){ %>
+                              <img src="/images/Active.svg" alt="" width="15px"></td>
+                            <% } else{ %>  
+                              <img src="/images/inActive.svg" alt="" width="15px"></td>
+                           <% } %></td>
                           <!-- Action Column -->
-                          <td>
-                            <button type="button" class="cprcedtbtnico" data-bs-toggle="modal" data-bs-target="#addroutemodal">
+                          <td class="d-flex">
+                            <button type="button" class="cprcedtbtnico" data-bs-toggle="modal" data-bs-target="#updatehotTransferRoutesmodal<%= index %>">
                               <img src="/images/Edit1.svg" alt="" width="15px">
                             </button>
+                      <form  action="/admin/hotTransferRoutes/delete/<%= data._id %>" method="get">
+                            
                             <button class="cprcedtbtnico"><img src="/images/delete.svg" alt="" width="15px"></button>
+                            </form>
                           </td>
                           <!-- Action Column End -->
                         </tr>
-                        <tr>
-                          <th scope="row" style="padding-left: 20px;padding-right: 20px;">Route Name</th>
-                          <td>00</td>
-                          <td><img src="/images/Active.svg" alt="" width="15px"></td>
-                          <!-- Action Column -->
-                          <td>
-                            <button type="button" class="cprcedtbtnico" data-bs-toggle="modal" data-bs-target="#addroutemodal">
-                              <img src="/images/Edit1.svg" alt="" width="15px">
-                            </button>
-                            <button class="cprcedtbtnico"><img src="/images/delete.svg" alt="" width="15px"></button>
-                          </td>
-                          <!-- Action Column End -->
-                        </tr>
-                        <tr>
-                          <th scope="row" style="padding-left: 20px;padding-right: 20px;">Route Name</th>
-                          <td>00</td>
-                          <td><img src="/images/Active.svg" alt="" width="15px"></td>
-                          <!-- Action Column -->
-                          <td>
-                            <button type="button" class="cprcedtbtnico" data-bs-toggle="modal" data-bs-target="#addroutemodal">
-                              <img src="/images/Edit1.svg" alt="" width="15px">
-                            </button>
-                            <button class="cprcedtbtnico"><img src="/images/delete.svg" alt="" width="15px"></button>
-                          </td>
-                          <!-- Action Column End -->
-                        </tr>
-                        <tr>
-                          <th scope="row" style="padding-left: 20px;padding-right: 20px;">Route Name</th>
-                          <td>00</td>
-                          <td><img src="/images/Active.svg" alt="" width="15px"></td>
-                          <!-- Action Column -->
-                          <td>
-                            <button type="button" class="cprcedtbtnico" data-bs-toggle="modal" data-bs-target="#addroutemodal">
-                              <img src="/images/Edit1.svg" alt="" width="15px">
-                            </button>
-                            <button class="cprcedtbtnico"><img src="/images/delete.svg" alt="" width="15px"></button>
-                          </td>
-                          <!-- Action Column End -->
-                        </tr>
-                        <tr>
-                          <th scope="row" style="padding-left: 20px;padding-right: 20px;">Route Name</th>
-                          <td>00</td>
-                          <td><img src="/images/Active.svg" alt="" width="15px"></td>
-                          <!-- Action Column -->
-                          <td>
-                            <button type="button" class="cprcedtbtnico" data-bs-toggle="modal" data-bs-target="#addroutemodal">
-                              <img src="/images/Edit1.svg" alt="" width="15px">
-                            </button>
-                            <button class="cprcedtbtnico"><img src="/images/delete.svg" alt="" width="15px"></button>
-                          </td>
-                          <!-- Action Column End -->
-                        </tr>
-                        <tr>
-                          <th scope="row" style="padding-left: 20px;padding-right: 20px;">Route Name</th>
-                          <td>00</td>
-                          <td><img src="/images/Active.svg" alt="" width="15px"></td>
-                          <!-- Action Column -->
-                          <td>
-                            <button type="button" class="cprcedtbtnico" data-bs-toggle="modal" data-bs-target="#addroutemodal">
-                              <img src="/images/Edit1.svg" alt="" width="15px">
-                            </button>
-                            <button class="cprcedtbtnico"><img src="/images/delete.svg" alt="" width="15px"></button>
-                          </td>
-                          <!-- Action Column End -->
-                        </tr>
+
+                        <!-- Add Process Pop-Up -->
+                    <form method="POST" action="/admin/hotTransferRoutes/<%= data._id %>">
+                      <div class="modal fade" id="updatehotTransferRoutesmodal<%= index %>" tabindex="-1" aria-labelledby="updatehotTransferRoutesmodal" aria-hidden="true">
+                        <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                          <div class="modal-content rounded-0">
+                            <div class="modal-header">
+                              <h1 class="modal-title fs-5 cmmpopuphdr" id="updatehotTransferRoutesmodal<%= index %>" style="font-size: 16px !important;">Modify Route</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <P>
+                                
+                                <!-- Form Starts Here -->
+  
+                                <!-- Row 1.1 -->
+                                <div class="row g-3" style="margin-bottom: 20px;">
+                                  <div class="col-lg-3">
+                                    <input type="text" name="name" value="<%= data.name %>" class="cprcsrchinpt" placeholder="Route Name" style="width: 100%;">
+                                  </div>
+                                  <div class="col-lg-3">
+                                    <input type="text" name="description" value="<%= data.desc %>" class="cprcsrchinpt" placeholder="Route Description" style="width: 100%;">
+                                  </div>
+                                  <div class="col-lg-3">
+                                    <input type="number" name="digits" value="<%= data.digits %>" class="cprcsrchinpt" placeholder="Add Digits" style="width: 100%;">
+                                  </div>
+                                  <div class="col-lg-3">
+                                    <div style="display: flex;margin-top: 3px;">
+                                      <P class="cprcsactvpara" style="margin-top: 3px;">Is Route Active?:</P>
+                                      <div class="cl-toggle-switch">
+                                        <label class="cl-switch">
+                                          <input name="active" type="checkbox" value="true"  <%= data.active == true ?"checked" :""  %>>
+                                          <span></span>
+                                        </label>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!--Row 1 End -->
+  
+                                <!-- Row 2 -->
+                                <div class="row g-3" style="margin-bottom: 20px;">
+                                  <div class="col-lg-12">
+                                    <div style="background-color: #f7f6fb;padding: 20px;">
+                                      <div class="row g-3">
+                                        <div class="col-lg-12">
+                                          <h1 class="cprcedtfrmsechdr">Trunk Set</h1>
+                                        </div>
+                                        <div class="col-lg-6">
+                                          <div>
+                                            <h1 class="cmmpopuphdr2">Available Trunks</h1>
+                                            <select name="availableTrunk[]" class="cprcedtslctmulti" id="availableTrunk_<%= index %>" multiple size="5" style="margin-bottom: 10px;">
+                                              
+                                              <% outboundTruck.filter(el => !data.selectedTrunk.includes(el.id)).forEach(function(trunk) { %>
+                                                <option value="<%=trunk.id %>">
+                                                  <%=trunk.name%>
+                                                </option>
+                                                <% }); %>
+                                            </select>
+                                            <div style="display: flex;">
+                                              <button type="button" onclick="move_right(document.getElementById('availableTrunk_<%= index %>'),document.getElementById('selectedTrunk_<%= index %>'))" class="addbluebtn">
+                                                <i
+                                                  class="fa-solid fa-forward"
+                                                ></i></button
+                                              >&nbsp;&nbsp;
+                                              <button class="removeredbtn"  onclick="move_left(document.getElementById('selectedTrunk_<%= index %>'),document.getElementById('availableTrunk_<%= index %>'))" type="button">
+                                                <i class="fa-solid fa-backward"></i>
+                                              </button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                          <div>
+                                            <h1 class="cmmpopuphdr2">Selected Trunks</h1>
+                                            <select
+                                    class="cprcedtslctmulti"
+                                    name="selectedTrunk"
+                                    id="selectedTrunk_<%= index %>"
+                                    multiple
+                                    size="5"
+                                    style="margin-bottom: 10px"
+                                  >
+                                  <% data.selectedTrunk.forEach(function(trunk) { %>
+                                    <% let option = outboundTruck.find((el) => el.id == trunk ) %>
+                                    <option value="<%=trunk %>" selected> 
+                                       <%= option?.name %>
+                                    </option>
+                                    <% }); %>
+                                  </select>
+                                          
+                                            <div style="display: flex;">
+                                              <button class="addbluebtn" type="button" onclick="move_up('selectedTrunk_<%= index %>')">
+                                                <i
+                                                  class="fa-solid fa-caret-up"
+                                                ></i></button
+                                              >&nbsp;&nbsp;<button class="removeredbtn"  type="button" onclick="move_bottom('selectedTrunk_<%= index %>')">
+                                                <i class="fa-solid fa-caret-down"></i>
+                                              </button>    </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!--Row 2 End -->
+  
+                                <!-- Form Ends Here-->
+  
+                              </P>
+                            </div>
+                            <div class="modal-footer cprcedtpopftr">
+                              <input type="submit" class="btn btn-primary cprcsaddprocessbtn" value="Modify"></button>
+                              <button type="button" class="btn btn-secondary cprcsaddprocessbtncls" data-bs-dismiss="modal">Close</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <!-- add Process Pop-Up End -->
+  </form>
+            <% }); %>
+
                       </tbody>
                     </table>
 
-                    <!-- Edit Process Pop-Up -->
+                    <!-- Add Process Pop-Up -->
+                    <form method="POST" action="/admin/hotTransferRoutes">
                     <div class="modal fade" id="addroutemodal" tabindex="-1" aria-labelledby="addroutemodalLabel" aria-hidden="true">
                       <div class="modal-dialog modal-xl modal-dialog-scrollable">
                         <div class="modal-content rounded-0">
@@ -175,20 +243,20 @@
                               <!-- Row 1.1 -->
                               <div class="row g-3" style="margin-bottom: 20px;">
                                 <div class="col-lg-3">
-                                  <input type="text" class="cprcsrchinpt" placeholder="Route Name" style="width: 100%;">
+                                  <input type="text" name="name" class="cprcsrchinpt" placeholder="Route Name" style="width: 100%;">
                                 </div>
                                 <div class="col-lg-3">
-                                  <input type="text" class="cprcsrchinpt" placeholder="Route Description" style="width: 100%;">
+                                  <input type="text" name="description" class="cprcsrchinpt" placeholder="Route Description" style="width: 100%;">
                                 </div>
                                 <div class="col-lg-3">
-                                  <input type="number" class="cprcsrchinpt" placeholder="Add Digits" style="width: 100%;">
+                                  <input type="number" name="digits"  class="cprcsrchinpt" placeholder="Add Digits" style="width: 100%;">
                                 </div>
                                 <div class="col-lg-3">
                                   <div style="display: flex;margin-top: 3px;">
                                     <P class="cprcsactvpara" style="margin-top: 3px;">Is Route Active?:</P>
                                     <div class="cl-toggle-switch">
                                       <label class="cl-switch">
-                                        <input type="checkbox">
+                                        <input name="active"  type="checkbox" value="true:">
                                         <span></span>
                                       </label>
                                     </div>
@@ -208,29 +276,38 @@
                                       <div class="col-lg-6">
                                         <div>
                                           <h1 class="cmmpopuphdr2">Available Trunks</h1>
-                                          <select class="cprcedtslctmulti" name="" id="" multiple size="5" style="margin-bottom: 10px;">
-                                            <option value="option one">Option One</option>
-                                            <option value="option two">Option Two</option>
-                                            <option value="option three">Option Three</option>
-                                            <option value="option four">Option Four</option>
+                                          <select name="availableTrunk[]" class="cprcedtslctmulti" id="availableTrunkAdd" multiple size="5" style="margin-bottom: 10px;">
+                                            <% outboundTruck.forEach(function(trunk) { %>
+                                              <option value="<%=trunk.id %>">
+                                                <%=trunk.name%>
+                                              </option>
+                                              <% }); %>
                                           </select>
                                           <div style="display: flex;">
-                                            <button class="addbluebtn"><i class="fa-solid fa-forward"></i></button>&nbsp;&nbsp;<button class="removeredbtn"><i class="fa-solid fa-backward"></i></button>
-                                          </div>
+                                            <button type="button" onclick="move_right(document.getElementById('availableTrunkAdd'),document.getElementById('selectedTrunkAdd'))" class="addbluebtn">
+                                              <i
+                                                class="fa-solid fa-forward"
+                                              ></i></button
+                                            >&nbsp;&nbsp;
+                                            <button class="removeredbtn"  onclick="move_left(document.getElementById('selectedTrunkAdd'),document.getElementById('availableTrunkAdd'))" type="button">
+                                              <i class="fa-solid fa-backward"></i>
+                                            </button> </div>
                                         </div>
                                       </div>
                                       <div class="col-lg-6">
                                         <div>
                                           <h1 class="cmmpopuphdr2">Selected Trunks</h1>
-                                          <select class="cprcedtslctmulti" name="" id="" multiple size="5" style="margin-bottom: 10px;">
-                                            <option value="option one">Option One</option>
-                                            <option value="option two">Option Two</option>
-                                            <option value="option three">Option Three</option>
-                                            <option value="option four">Option Four</option>
+                                          <select name="selectedTrunk[]" class="cprcedtslctmulti"  id="selectedTrunkAdd" multiple size="5" style="margin-bottom: 10px;">
+
                                           </select>
                                           <div style="display: flex;">
-                                            <button class="addbluebtn"><i class="fa-solid fa-caret-up"></i></button>&nbsp;&nbsp;<button class="removeredbtn"><i class="fa-solid fa-caret-down"></i></button>
-                                          </div>
+                                            <button class="addbluebtn" type="button" onclick="move_up('selectedTrunkAdd')">
+                                              <i
+                                                class="fa-solid fa-caret-up"
+                                              ></i></button
+                                            >&nbsp;&nbsp;<button class="removeredbtn"  type="button" onclick="move_bottom('selectedTrunkAdd')">
+                                              <i class="fa-solid fa-caret-down"></i>
+                                            </button>    </div>
                                         </div>
                                       </div>
                                     </div>
@@ -244,14 +321,15 @@
                             </P>
                           </div>
                           <div class="modal-footer cprcedtpopftr">
-                            <button type="button" class="btn btn-primary cprcsaddprocessbtn">Add / Modify</button>
+                            <input type="submit" class="btn btn-primary cprcsaddprocessbtn" value="Add"></button>
                             <button type="button" class="btn btn-secondary cprcsaddprocessbtncls" data-bs-dismiss="modal">Close</button>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <!-- Edit Process Pop-Up End -->
-
+                    
+                    <!-- add Process Pop-Up End -->
+</form>
                   </div>
               </div>
             </div>
@@ -264,7 +342,56 @@
     </div>
 
     <script>
-      const xValues = ["Total Calls", "Answered Calls", "Unanswered Calls"];
+            
+    function move_right(left, right) {
+			for (var i = 0; i < left.options.length; i++) {
+				if (left.options[i].selected) {
+					right.options[right.options.length] = new Option(left.options[i].text, left.options[i].value,false,true);
+					left.options[i--] = null;
+				}
+			}
+		}
+
+		function move_left(right, left) {
+			for (var i = 0; i < right.options.length; i++) {
+				if (right.options[i].selected) {
+					left.options[left.options.length] = new Option(right.options[i].text, right.options[i].value,false,true);
+					right.options[i--] = null;
+				}
+			}
+      for (var i = 0; i < right.options.length; i++) {
+        right.options[i].selected = true
+      }
+
+		}
+
+    function move_bottom(selected_tabs) {
+			var selected_tabs = document.getElementById(selected_tabs);
+			var selectOptions = selected_tabs.getElementsByTagName('option');
+			for (var i = selectOptions.length - 2; i >= 0; i--) {
+				var opt = selectOptions[i];
+				if (opt.selected) {
+					var nextOpt = selectOptions[selectOptions.length - 1];
+					opt = selected_tabs.removeChild(opt);
+					nextOpt = selected_tabs.replaceChild(opt, nextOpt);
+					selected_tabs.insertBefore(nextOpt, opt);
+				}
+			}
+		}
+
+		function move_up(selected_tabs) {
+			var selected_tabs = document.getElementById(selected_tabs);
+			var selectOptions = selected_tabs.getElementsByTagName('option');
+			for (var i = 1; i < selectOptions.length; i++) {
+				var opt = selectOptions[i];
+				if (opt.selected) {
+					selected_tabs.removeChild(opt);
+					selected_tabs.insertBefore(opt, selectOptions[i - 1]);
+				}
+			}
+		}
+
+      const xValues = ["Total hotTransferRoutess", "Answered hotTransferRoutess", "Unanswered hotTransferRoutess"];
       const yValues = [55, 49, 44];
       const barColors = [
         "#f4783b",
@@ -325,4 +452,4 @@
       </script>
 
 </body>
-</html>
+</html
